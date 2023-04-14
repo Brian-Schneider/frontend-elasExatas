@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import './App.css'
+import Cadastro from './paginas/cadastro/Cadastro'
 import Home from './paginas/home/Home'
 import Navbar from './components/estaticos/navbar/Navbar'
 import Footer from './components/estaticos/footer/Footer';
-
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './paginas/login/Login'
 
