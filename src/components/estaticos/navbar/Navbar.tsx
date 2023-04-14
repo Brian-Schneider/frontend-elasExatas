@@ -13,122 +13,54 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import './Navbar.css'
+import { Link } from 'react-router-dom';
 
-const pages = ['Home', 'Postagens', 'Temas', 'Cadastrar Tema', 'Logout'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Navbar() {
-    const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
-    const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+    return(
+     <>
+      <AppBar position="static" style={{background: 'blue'}}>
+        <Toolbar variant="dense" >
+          <Box display={'flex'} justifyContent={'space-between'} width={'100%'} >
+            <Box style={{ cursor: 'pointer' }}>
+              <Typography variant="h5" color="inherit">
+                ElasExatas
+              </Typography>
+            </Box>
 
-    const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorElNav(event.currentTarget);
-    };
-    const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorElUser(event.currentTarget);
-    };
-
-    const handleCloseNavMenu = () => {
-        setAnchorElNav(null);
-    };
-
-    const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
-    };
-
-    return (
-        <AppBar position="static">
-            <Container maxWidth="xl">
-                <Toolbar disableGutters>
-                    <img alt="" src="https://i.imgur.com/9QguBVp.png" className='imagemNavbar' />
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="a"
-                        href="/"
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
-                        }}
-                    >
-                        ElasExatas
-                    </Typography>
-
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-                        <IconButton
-                            size="large"
-                            aria-label="account of current user"
-                            aria-controls="menu-appbar"
-                            aria-haspopup="true"
-                            onClick={handleOpenNavMenu}
-                            color="inherit"
-                        >
-                            <MenuIcon />
-                        </IconButton>
-                        <Menu
-                            id="menu-appbar"
-                            anchorEl={anchorElNav}
-                            anchorOrigin={{
-                                vertical: 'bottom',
-                                horizontal: 'left',
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'left',
-                            }}
-                            open={Boolean(anchorElNav)}
-                            onClose={handleCloseNavMenu}
-                            sx={{
-                                display: { xs: 'block', md: 'none' },
-                            }}
-                        >
-                            {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
-                                </MenuItem>
-                            ))}
-                        </Menu>
-                    </Box>
-                    <Typography
-                        variant="h5"
-                        noWrap
-                        component="a"
-                        href=""
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'flex', md: 'none' },
-                            flexGrow: 1,
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
-                        }}
-                    >
-                        CAGEANDO
-                    </Typography>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
-                            <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
-                            >
-                                {page}
-                            </Button>
-                        ))}
-                    </Box>
-
-
-                </Toolbar>
-            </Container>
-        </AppBar>
+            <Box display="flex" justifyContent="start">
+              <Box mx={1} style={{ cursor: 'pointer' }}>
+                <Typography variant="h6" color="inherit">
+                  home
+                </Typography>
+              </Box>
+              <Box mx={1} style={{ cursor: 'pointer' }}>
+                <Typography variant="h6" color="inherit">
+                  postagens
+                </Typography>
+              </Box>
+              <Box mx={1} style={{ cursor: 'pointer' }}>
+                <Typography variant="h6" color="inherit">
+                  temas
+                </Typography>
+              </Box>
+              <Box mx={1} style={{ cursor: 'pointer' }}>
+                <Typography variant="h6" color="inherit">
+                  cadastrar tema
+                </Typography>
+              </Box>
+              <Box mx={1}>
+                <Link to='/login'>
+                  <Typography variant="h6" color="inherit">
+                    logout
+                  </Typography>
+                </Link>
+              </Box>
+            </Box>
+          </Box>
+        </Toolbar>
+      </AppBar>
+    </>
     );
 }
 export default Navbar

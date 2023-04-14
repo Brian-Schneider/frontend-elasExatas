@@ -21,7 +21,9 @@ function Cadastro() {
                         <TextField type="password" variant="outlined" label="Repita a sua Senha" margin="normal" fullWidth></TextField>
                         <TextField variant="outlined" label="Link da Foto de Perfil" margin="normal" fullWidth></TextField>
                         <Box marginY={2}>
-                            <Button type="submit" variant="contained" color="primary" fullWidth>Cadastrar</Button>
+                            <Link to='/login'>
+                                <Button type="submit" variant="contained" color="primary" fullWidth>Cadastrar</Button>
+                            </Link>
                         </Box>
                     </form>
                 </Grid>
