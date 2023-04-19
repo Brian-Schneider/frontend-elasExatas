@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 
 function Cadastro() {
-  return (
+return (
     <>
     <Grid container alignItems="center">
         <Grid xs={6} className="imagemCadastro"></Grid>
@@ -31,7 +31,7 @@ function Cadastro() {
         </Grid>
     </Grid>
 </>
-  )
+)
 }
 
 export default Cadastro
