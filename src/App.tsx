@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import Cadastro from './paginas/cadastro/Cadastro'
+import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario'
 import Home from './paginas/home/Home'
 import Navbar from './components/estaticos/navbar/Navbar'
 import Footer from './components/estaticos/footer/Footer';
@@ -17,7 +17,7 @@ function App() {
       <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/cadastrar' element={<Cadastro />} />
+          <Route path='/cadastrousuario' element={<CadastroUsuario />} />
           <Route path='/home' element={<Home />} />
       </Routes>
     </div>
