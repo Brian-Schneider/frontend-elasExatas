@@ -1,5 +1,11 @@
-.textoLogin {
+.textoLogin{
     font-weight: bold !important;
+    color:#5D6D7E !important;
+    
+}
+.textoLogin:hover{
+    font-weight: bold !important;
+    color:#07bcd4 !important;
 }
 
 .text-decoration-none {
@@ -11,5 +17,13 @@
     min-height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
-    
+}
+
+.botaoLogar {
+    background-color: #08aabe !important;
+}
+
+.botaoLogar:hover {
+    background-color: #07bcd4  !important;
+
 }
