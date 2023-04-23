@@ -21,7 +21,7 @@ function Home(){
                         align="center" 
                         className='titulo' 
                         >
-                            Seja bem vinde ao Elas Exatas!
+                            Sejam bem vindas ao Elas Exatas!
                         </Typography>
 
                         <Typography 
@@ -31,7 +31,8 @@ function Home(){
                         component="h5" align="center" 
                         className='titulo'
                         
-                        >Expresse aqui os seus pensamentos e opiniões!
+                        >
+                            Expresse aqui os seus pensamentos e opiniões!
                         </Typography>
                     </Box>
                     <Box display="flex" justifyContent="center">

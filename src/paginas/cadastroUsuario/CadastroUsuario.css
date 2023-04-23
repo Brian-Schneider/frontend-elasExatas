@@ -4,3 +4,21 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.botaoCadastrar{
+    margin-right: 20px !important;
+    background-color: #07bcd4 !important;
+}
+
+.botaoCadastrar:hover{
+    background-color:#08aabe !important; 
+}
+
+.botaoCancelar{
+    background-color: #ff4d80!important;
+
+}
+
+.botaoCancelar:hover{
+    background-color: #ff66c4!important;
+}

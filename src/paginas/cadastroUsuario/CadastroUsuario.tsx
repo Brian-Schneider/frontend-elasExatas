@@ -83,11 +83,11 @@ function CadastroUsuario() {
                                 <TextField value={usuario.usuario} onChange={(event: ChangeEvent<HTMLInputElement>) => updateModel(event)} name="usuario" type="email" variant="outlined" label="E-mail" margin="normal" fullWidth></TextField>
                                 <TextField value={usuario.foto} onChange={(event: ChangeEvent<HTMLInputElement>) => updateModel(event)} name="foto" variant="outlined" label="Link da Foto de Perfil" margin="normal" fullWidth></TextField>
                                 <TextField value={usuario.senha} onChange={(event: ChangeEvent<HTMLInputElement>) => updateModel(event)} name="senha" type="password" variant="outlined" label="Senha" margin="normal" fullWidth></TextField>
-                                <TextField value={confirmarSenha} onChange={(event: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(event)} name="confirmarSenha" type="password" variant="outlined" label="Repita a sua Senha" margin="normal" fullWidth></TextField>
-                                <Box marginY={2}>
-                                    <Button type="submit" variant="contained" color="primary" >Cadastrar</Button>
+                                <TextField value={confirmarSenha} onChange={(event: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(event)} name="confirmarSenha" type="password" variant="outlined" label="Confirmar Senha" margin="normal" fullWidth></TextField>
+                                <Box marginY={2}  textAlign={'center'}>
+                                    <Button type="submit" variant="contained" className='botaoCadastrar' color="primary" >Cadastrar</Button>
                                     <Link to='/login'>
-                                        <Button type="submit" variant="contained" color="secondary" >Cancelar</Button>
+                                        <Button type="submit" variant="contained" className='botaoCancelar' color="secondary" >Cancelar</Button>
                                     </Link>
                                 </Box>
                             </form>
