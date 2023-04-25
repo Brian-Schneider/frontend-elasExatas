@@ -12,24 +12,24 @@ function Footer() {
             direction="row"
             justifyContent="center"
             alignItems="center"
-            style={{ backgroundColor: '#fdcad2' }}>
+            style={{ backgroundColor: '#d74883' }}>
             <Box display={'flex'} alignItems="center" style={{ height: '120px' }} width={'100%'} justifyContent={'space-around'}>
                 <Box>
                     <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-                        <Typography variant="h5" align="center" gutterBottom style={{ color: "#5D6D7E" }}>
+                        <Typography variant="h5" align="center" gutterBottom style={{ color: "#ffff" }}>
                             Siga-nos nas redes sociais{' '}
                         </Typography>
                     </Box>
                     <Box display="flex" alignItems="center" justifyContent="center">
 
                         <a href="https://www.instagram.com/generationbrasil/" target="_blank">
-                            <InstagramIcon style={{ fontSize: 40, color: "#5D6D7E" }} />
+                            <InstagramIcon style={{ fontSize: 40, color: "#ffff" }} />
                         </a>
                         <a href="https://www.linkedin.com/school/generationbrasil/" target="_blank">
-                            <LinkedInIcon style={{ fontSize: 40, color: "#5D6D7E" }} />
+                            <LinkedInIcon style={{ fontSize: 40, color: "#ffff" }} />
                         </a>
                         <a href="https://www.instagram.com/generationbrasil/" target="_blank">
-                            <MailIcon style={{ fontSize: 40, color: "#5D6D7E" }} />
+                            <MailIcon style={{ fontSize: 40, color: "#ffff" }} />
                         </a>
                     </Box>
                 </Box>
@@ -37,13 +37,13 @@ function Footer() {
                 <Box>
                     <Box paddingTop={1}>
                         
-                        <a href="https://brasil.generation.org" target='_blank'>
+                        <a>
                             <Typography 
                             variant="h5" 
                             gutterBottom 
                             align="center" 
                             component={"span"} 
-                            style={{ color: "#5D6D7E" }}
+                            style={{ color: "#ffff" }}
                             >
                                 elasexatas.com
                             </Typography>
@@ -53,7 +53,7 @@ function Footer() {
                         variant="h5" 
                         align="center" 
                         gutterBottom 
-                        style={{ color: "#5D6D7E" }} 
+                        style={{ color: "#ffff" }} 
                         component={"span"}
                         >
                             {'  '} © 2023 

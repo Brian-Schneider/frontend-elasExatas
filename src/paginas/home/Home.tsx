@@ -20,6 +20,7 @@ function Home(){
                         component="h3" 
                         align="center" 
                         className='titulo' 
+                        style={{color: "#174581", fontWeight: "bold"}}
                         >
                             Sejam bem vindas ao Elas Exatas!
                         </Typography>
@@ -38,12 +39,12 @@ function Home(){
                     <Box display="flex" justifyContent="center">
                         <Box marginRight={1}>
                         </Box>
-                        <Button variant="outlined" className='botao'>Ver Postagens</Button>
+                        <Button variant="outlined" style={{ borderColor: "white", backgroundColor: "#107bbf", color: "white" }}>Ver Postagens</Button>
                     </Box>
                 </Grid>
                 <Grid item xs={6} >
                     <img 
-                    src="https://i.imgur.com/Nkw1WYD.jpg" 
+                    src="https://i.imgur.com/MAqYMtr.png" 
                     alt="" 
                     className='fotoHome' 
                     />

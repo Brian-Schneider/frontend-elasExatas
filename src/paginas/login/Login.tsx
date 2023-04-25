@@ -53,15 +53,15 @@ function Login() {
     return (
         <>
             <Grid container direction='row' justifyContent='center' alignItems='center'>
-                <Grid xs={6} justifyContent='center' alignItems='center'>
+                <Grid item xs={6} justifyContent='center' alignItems='center'>
                     <Box paddingX={20}>
                         <form onSubmit={onSubmit}>
                             <Typography 
                             variant='h3' 
                             gutterBottom 
                             color='textPrimary' 
-                            component='h3' align='center' 
-                            >
+                            component='h3' align='center'
+                            style={{color: "#339097", fontWeight: "bold"}}>
                                 Entrar
                             </Typography>
                             <TextField 
@@ -84,7 +84,7 @@ function Login() {
                             type='password' 
                             fullWidth />
                             <Box marginTop={2} textAlign='center'>
-                                <Button type='submit' variant='contained' className='botaoLogar' color='primary'>
+                                <Button type='submit' variant='contained' className='botaoLogar' color='primary' fullWidth>
                                     Logar
                                 </Button>
                             </Box>
@@ -100,7 +100,8 @@ function Login() {
                     </Box>
                 </Grid>
 
-                <Grid xs={6} className="imagemLogin">
+                <Grid xs={6}>
+                <img src="https://i.imgur.com/Zd2M41T.png" alt="" width="600px" height="600px" style={{backgroundRepeat: 'no-repeat'}}/>
                 </Grid>
 
             </Grid>
