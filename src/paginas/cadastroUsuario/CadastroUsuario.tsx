@@ -78,7 +78,7 @@ function CadastroUsuario() {
                     <Box display="flex" justifyContent="center">
                         <Grid item xs={8}>
                             <form onSubmit={onSubmit}>
-                                <Typography variant="h3" align="center" gutterBottom>Insira os seus dados</Typography>
+                                <Typography variant="h3" align="center" gutterBottom style={{color: "#339097", fontWeight: "bold"}}>Insira os seus dados</Typography>
                                 <TextField value={usuario.nome} onChange={(event: ChangeEvent<HTMLInputElement>) => updateModel(event)} name="nome" variant="outlined" label="Nome" margin="normal" fullWidth></TextField>
                                 <TextField value={usuario.usuario} onChange={(event: ChangeEvent<HTMLInputElement>) => updateModel(event)} name="usuario" type="email" variant="outlined" label="E-mail" margin="normal" fullWidth></TextField>
                                 <TextField value={usuario.foto} onChange={(event: ChangeEvent<HTMLInputElement>) => updateModel(event)} name="foto" variant="outlined" label="Link da Foto de Perfil" margin="normal" fullWidth></TextField>

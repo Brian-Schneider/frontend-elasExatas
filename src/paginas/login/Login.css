@@ -1,11 +1,11 @@
 .textoLogin{
     font-weight: bold !important;
-    color:#5D6D7E !important;
+    color:#339097 !important;
     
 }
 .textoLogin:hover{
     font-weight: bold !important;
-    color:#07bcd4 !important;
+    color:#285864 !important;
 }
 
 .text-decoration-none {
@@ -13,7 +13,7 @@
 }
 
 .imagemLogin {
-    background-image: url(https://i.imgur.com/Nkw1WYD.jpg);
+    background-image: url(https://i.imgur.com/Zd2M41T.png);
     min-height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
