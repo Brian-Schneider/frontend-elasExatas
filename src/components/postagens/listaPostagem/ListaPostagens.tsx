@@ -70,7 +70,7 @@ function ListaPostagem() {
                             <CardActions>
                                 <Box display="flex" justifyContent="center" mb={1.5}>
 
-                                    <Link to={`/formularioPostagem/${postagem.id}`} className="text-decorator-none" >
+                                    <Link to={`/editarpostagem/${postagem.id}`} className="text-decorator-none" >
                                         <Box mx={1} >
                                             <Button variant="contained" className='btnAtualizarPos' size='small' color="primary" >
                                                 Editar

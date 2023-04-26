@@ -55,7 +55,7 @@ function ListaTemas() {
             </CardContent>
             <CardActions>
               <Link
-                to={`/atualizartema/${tema.id}`}
+                to={`/editartema/${tema.id}`}
                 className="text-decoration-none"
               >
                 {" "}

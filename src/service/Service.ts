@@ -35,3 +35,7 @@ export const put = async(url: string, dados: Object, setDados: Function, headers
     const resposta = await api.put(url, dados, headers)
     setDados(resposta.data)
 }
+
+export const deleteId = async (url: string, headers: Object) => {
+  await api.delete(url, headers);
+};

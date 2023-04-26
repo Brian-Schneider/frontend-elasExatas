@@ -42,7 +42,7 @@ function CadastroTema() {
     if (id !== undefined) {
       getTemaById(id);
     }
-  });
+  }, []);
 
   useEffect(() => {
     if (token === "") {
