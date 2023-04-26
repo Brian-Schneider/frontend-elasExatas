@@ -1,5 +1,5 @@
 export interface Tema {
-    id: number
-    tm_titulo: string
+    id: number,
+    tituloTema: string,
     descricao: string
 }
