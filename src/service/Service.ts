@@ -14,13 +14,13 @@ export const cadastrarUsuario = async (
 };
 
 export const login = async (url: string, dados: Object, setDados: Function) => {
-  const resposta = await api.post(url, dados);
-  setDados(resposta.data.token);
-};
+    const resposta = await api.post(url, dados)
+    setDados(resposta.data.token)
+}
 
-export const getAll = async (url: any, setDados: any, headers: any) => {
-  const resposta = await api.get(url, headers);
-  setDados(resposta.data);
+export const getAll = async(url: any, setDados: any, header: any) => {
+    const resposta = await api.get(url,header)
+    setDados(resposta.data)
 };
 
 export const getId = async (url: any, setDados: any, headers: any) => {
