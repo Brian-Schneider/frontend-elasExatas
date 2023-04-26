@@ -6,6 +6,8 @@ import Navbar from './components/estaticos/navbar/Navbar'
 import Footer from './components/estaticos/footer/Footer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Login from './paginas/login/Login'
+import CadastroPostagem from './components/postagens/cadastroPotagem/CadastroPostagem'
+
 
 function App() {
 
@@ -17,8 +19,13 @@ function App() {
       <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/cadastrousuario' element={<CadastroUsuario />} />
+          <Route path='/cadastroUsuario' element={<CadastroUsuario />} />
           <Route path='/home' element={<Home />} />
+          <Route path='/cadastroPostagem' element={<CadastroPostagem />} />
+          <Route path="/editarPostagem/:id" element={<CadastroPostagem />} />
+          
+        
+          
       </Routes>
     </div>
     <Footer />

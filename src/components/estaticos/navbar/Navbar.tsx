@@ -25,11 +25,13 @@ function Navbar() {
                   Home
                 </Typography>
               </Box>
-              <Box mx={1} style={{ cursor: 'pointer' }}>
-                <Typography variant="h6" color="#ffff">
-                  Postagens
-                </Typography>
-              </Box>
+              <Link to="/postagens">
+                <Box mx={1} style={{ cursor: 'pointer' }}>
+                  <Typography variant="h6" color="#ffff">
+                    Postagens
+                  </Typography>
+                </Box>
+              </Link>
               <Box mx={1} style={{ cursor: 'pointer' }}>
                 <Typography variant="h6" color="#ffff">
                   Temas
