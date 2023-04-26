@@ -2,7 +2,7 @@ import { Tema } from "./Tema"
 
 export interface Postagem {
     id: number
-    titulo: string
+    tituloPostagem: string
     conteudo: string
     data: string
     imagem: string
