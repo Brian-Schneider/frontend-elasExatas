@@ -1,6 +1,5 @@
 import { Tema } from "./Tema";
-//import Usuario from "./Usuario";
-
+import Usuario from "./Usuario";
 
 interface Postagem{
     id: number;
@@ -10,7 +9,7 @@ interface Postagem{
     imagem: string;
     link?: string|null;
     tema?:Tema|null
-    //usuario?:Usuario|null
+    usuario?:Usuario|null
 
 }
 export default Postagem;

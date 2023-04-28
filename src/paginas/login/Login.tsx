@@ -7,7 +7,7 @@ import './Login.css';
 import UsuarioLogin from '../../models/UsuarioLogin';
 import { login } from '../../service/Service';
 import { useDispatch } from 'react-redux';
-import { addToken } from '../../store/tokens/Action';
+import { addId, addToken } from '../../store/tokens/Action';
 import { toast } from 'react-toastify';
 
 function Login() {
@@ -18,6 +18,16 @@ function Login() {
     const [token, setToken] = useState("")
     
     const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>(
+        {
+            id: 0,
+            nome: '',
+            usuario: '',
+            senha: '',
+            foto: '',
+            token: ''
+        })
+    
+    const [respostaUsuarioLogin, setRespostaUsuarioLogin] = useState<UsuarioLogin>(
         {
             id: 0,
             nome: '',
@@ -41,12 +51,21 @@ function Login() {
         }
     }, [token])
 
+    useEffect(() => {
+        if (respostaUsuarioLogin.token !== '') {
+            dispatch(addToken(respostaUsuarioLogin.token))
+            dispatch(addId(respostaUsuarioLogin.id.toString()))
+            history('/home')
+        }
+    }, [respostaUsuarioLogin.token])
+
+
     async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
         event.preventDefault()
 
         try {
 
-            await login('/usuarios/logar', usuarioLogin, setToken)
+            await login('/usuarios/logar', usuarioLogin, setRespostaUsuarioLogin)
             toast.success('Usuário logado com sucesso! 🤩', {
                 position: "top-left",
                 autoClose: 2000,
