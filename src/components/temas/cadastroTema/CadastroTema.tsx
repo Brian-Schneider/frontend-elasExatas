@@ -8,12 +8,16 @@ import { Tema } from "../../../models/Tema";
 import { getId, post, put } from "../../../service/Service";
 
 import "./CadastroTema.css";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/tokenReducer";
 
 function CadastroTema() {
 
   const history = useNavigate();
 
-  const [token, setToken] = useLocalStorage("token");
+  const token = useSelector<TokenState, TokenState["token"]>(
+    (state) => state.token
+  )
 
   const { id } = useParams<{ id: string }>();
 

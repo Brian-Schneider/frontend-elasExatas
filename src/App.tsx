@@ -15,32 +15,36 @@ import ListaTemas from './components/temas/listaTemas/ListaTemas'
 import CadastroTema from './components/temas/cadastroTema/CadastroTema'
 import DeletarTema from './components/temas/deletarTema/DeletarTema'
 import DeletarPostagem from './components/postagens/deletarPostagem/DeletarPostagem'
+import { Provider } from 'react-redux'
+import store from './store/Store';
 
 
 function App() {
 
   return (
 
-    <BrowserRouter>
-    <Navbar />
-    <div style={{ minHeight: '100vh' }}>
-      <Routes>
-          <Route path='/' element={<Login />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/cadastroUsuario' element={<CadastroUsuario />} />
-          <Route path='/home' element={<Home />} />
-          <Route path='/cadastropostagem' element={<CadastroPostagem />} />
-          <Route path="/editarpostagem/:id" element={<CadastroPostagem />} />
-          <Route path="/postagens" element={<ListaPostagens />} />
-          <Route path='/deletarpostagem/:id' element={<DeletarPostagem />}/>
-          <Route path='/temas' element={<ListaTemas />} />
-          <Route path='/cadastrartema' element={<CadastroTema />} />
-          <Route path='/editartema/:id' element={<CadastroTema />} />
-          <Route path='/deletartema/:id' element={<DeletarTema />}/>
-      </Routes>
-    </div>
-    <Footer />
-  </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Navbar />
+        <div style={{ minHeight: '100vh' }}>
+          <Routes>
+            <Route path='/' element={<Login />} />
+            <Route path='/login' element={<Login />} />
+            <Route path='/cadastroUsuario' element={<CadastroUsuario />} />
+            <Route path='/home' element={<Home />} />
+            <Route path='/cadastropostagem' element={<CadastroPostagem />} />
+            <Route path="/editarpostagem/:id" element={<CadastroPostagem />} />
+            <Route path="/postagens" element={<ListaPostagens />} />
+            <Route path='/deletarpostagem/:id' element={<DeletarPostagem />}/>
+            <Route path='/temas' element={<ListaTemas />} />
+            <Route path='/cadastrartema' element={<CadastroTema />} />
+            <Route path='/editartema/:id' element={<CadastroTema />} />
+            <Route path='/deletartema/:id' element={<DeletarTema />}/>
+          </Routes>
+        </div>
+        <Footer />
+      </BrowserRouter>
+    </Provider>
   
   )
 }

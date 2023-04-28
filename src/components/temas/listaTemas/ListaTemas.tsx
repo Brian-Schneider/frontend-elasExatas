@@ -13,13 +13,17 @@ import { getAll } from "../../../service/Service";
 import useLocalStorage from "react-use-localstorage";
 
 import "./ListaTemas.css";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/tokenReducer";
 
 function ListaTemas() {
   const history = useNavigate();
 
   const [temas, setTemas] = useState<Tema[]>([]);
 
-  const [token, setToken] = useLocalStorage("token");
+  const token = useSelector<TokenState, TokenState["token"]>(
+    (state) => state.token
+  )
 
   async function getAllTemas() {
     await getAll("/temas", setTemas, {
