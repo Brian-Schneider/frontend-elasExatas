@@ -15,6 +15,7 @@ import useLocalStorage from "react-use-localstorage";
 import "./ListaTemas.css";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokenReducer";
+import { toast } from "react-toastify";
 
 function ListaTemas() {
   const history = useNavigate();
@@ -39,7 +40,16 @@ function ListaTemas() {
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado!");
+      toast.info('Você precisa estar logado! 🤪', {
+        position: "top-left",
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        });
       history("/login");
     }
   }, [token]);

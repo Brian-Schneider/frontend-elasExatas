@@ -4,9 +4,37 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/tokenReducer";
+import { addToken } from "../../../store/tokens/Action";
+import { toast } from "react-toastify";
 
 function Navbar() {
+
+  const history = useNavigate()
+
+  const dispatch = useDispatch();
+
+  const token = useSelector<TokenState, TokenState["token"]>(
+    (state) => state.token
+  );
+
+  function logout() {
+    dispatch(addToken(''))
+    toast.success('Usuário deslogado 🥲', {
+      position: "top-left",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+    history('/login')
+  }
+  
   return (
     <>
       <AppBar position="static" style={{ background: "#d74883" }}>
@@ -49,12 +77,10 @@ function Navbar() {
                 </Box>
               </Link>
 
-              <Box mx={1}>
-                <Link to="/login">
+              <Box mx={1} style={{cursor:'pointer'}}onClick={logout}>
                   <Typography variant="h6" color="#ffff">
                     Logout
                   </Typography>
-                </Link>
               </Box>
             </Box>
           </Box>
