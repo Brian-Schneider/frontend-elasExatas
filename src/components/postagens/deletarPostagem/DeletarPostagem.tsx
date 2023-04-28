@@ -2,8 +2,8 @@ import { Box, Button, Card, Grid, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import useLocalStorage from 'react-use-localstorage'
-import Postagem from '../../../../models/Postagem'
-import { deleteId, getId } from '../../../../service/Service'
+import Postagem from '../../../models/Postagem'
+import { deleteId, getId } from '../../../service/Service'
 
 function DeletarPostagem() {
 
