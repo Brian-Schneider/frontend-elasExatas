@@ -9,13 +9,14 @@ import {
     MenuItem,
     Button,
   } from "@mui/material";
+
+  import "./CadastroPostagem.css";
   import React, { ChangeEvent, useEffect, useState } from "react";
   import { useNavigate, useParams } from "react-router-dom";
   import useLocalStorage from "react-use-localstorage";
   import { Tema } from "../../../models/Tema";
+  import Postagem from "../../../models/Postagem";
   import { getAll, getId, post, put } from "../../../service/Service";
-  import "./CadastroPostagem.css";
-  import { Postagem } from "../../../models/Postagem";
   
   function CadastroPostagem() {
     const history = useNavigate();
@@ -123,7 +124,7 @@ import {
   
     return (
       <>
-        <Grid container maxWidth={"sm"}>
+        <Grid container justifyContent={"center"} mt={4} >
           <form className="cadastroPostagem" onSubmit={onSubmit}>
             <Typography marginTop={4} variant="h3" align="center">
               Cadastrar Postagem

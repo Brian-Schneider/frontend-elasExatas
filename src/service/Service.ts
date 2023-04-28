@@ -1,13 +1,17 @@
 import axios from "axios";
 
 export const api = axios.create({
-    baseURL: 'https://elasexatas.onrender.com'
-})
+  baseURL: "https://elasexatas.onrender.com",
+});
 
-export const cadastrarUsuario = async (url: string, dados: Object, setDados: Function) => {
-    const resposta = await api.post(url, dados)
-    setDados(resposta.data)
-}
+export const cadastrarUsuario = async (
+  url: string,
+  dados: Object,
+  setDados: Function
+) => {
+  const resposta = await api.post(url, dados);
+  setDados(resposta.data);
+};
 
 export const login = async (url: string, dados: Object, setDados: Function) => {
     const resposta = await api.post(url, dados)
@@ -31,3 +35,7 @@ export const put = async(url: string, dados: Object, setDados: Function, headers
     const resposta = await api.put(url, dados, headers)
     setDados(resposta.data)
 }
+
+export const deleteId = async (url: string, headers: Object) => {
+  await api.delete(url, headers);
+};
