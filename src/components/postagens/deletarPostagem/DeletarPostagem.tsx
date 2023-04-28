@@ -6,6 +6,7 @@ import Postagem from '../../../models/Postagem'
 import { deleteId, getId } from '../../../service/Service'
 import { useSelector } from 'react-redux'
 import { TokenState } from '../../../store/tokens/tokenReducer'
+import { toast } from 'react-toastify'
 
 function DeletarPostagem() {
 
@@ -21,7 +22,16 @@ function DeletarPostagem() {
 
     useEffect(() => {
         if(token === "") {
-            alert("Token inválido")
+            toast.info('Você precisa estar logado! 🤪', {
+                position: "top-left",
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });            
             history("/home")
         }
     }, [token])
@@ -46,7 +56,16 @@ function DeletarPostagem() {
                 Authorization: token
             }
         })
-        alert("Postagem deletada com sucesso!")
+        toast.success('Postagem deletada com sucesso! 🤩', {
+            position: "top-left",
+            autoClose: 4000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            });
         history("/postagens")
     }
 
