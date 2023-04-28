@@ -70,14 +70,13 @@ function ListaPostagem() {
                                 </Typography>  
 
                                 <Typography variant="body2" component="p">
-                                   {/*{postagem.tema.descricao}*/}
-                                </Typography>  
-
-                                <Typography variant="body2" component="p">
-                                    {/*{postagem.usuario.nome}*/}
+                                    {postagem.tema?.descricao}
                                 </Typography> 
 
-                                          
+                                <Typography variant="body2" component="p">
+                                    Postado por: {postagem.usuario?.nome}
+                                </Typography>                            
+
                                 <Typography variant="body2" component="p">               
                                     Data: {Intl.DateTimeFormat('pt-BR', {dateStyle: 'full', timeStyle: 'medium'}).format(new Date(postagem.data))}
                                 </Typography>

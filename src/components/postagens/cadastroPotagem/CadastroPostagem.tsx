@@ -19,6 +19,7 @@ import { getAll, getId, post, put } from "../../../service/Service";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokenReducer";
 import { toast } from "react-toastify";
+import Usuario from "../../../models/Usuario";
 
 function CadastroPostagem() {
   const history = useNavigate();
@@ -27,6 +28,10 @@ function CadastroPostagem() {
     (state) => state.token
   );
 
+  const usuarioId = useSelector<TokenState, TokenState['id']>(
+    (state) => state.id
+  )
+  
   const { id } = useParams<{ id: string }>();
 
   const [temas, setTemas] = useState<Tema[]>([]);
@@ -41,12 +46,21 @@ function CadastroPostagem() {
     imagem: "",
     link: "",
     tema: null,
+    usuario: null
   });
 
   const [tema, setTema] = useState<Tema>({
     id: 0,
     tituloTema: "",
     descricao: "",
+  });
+
+  const [usuario, setUsuario] = useState<Usuario>({
+    id: +usuarioId,
+    nome: "",
+    usuario: "",
+    senha: "",
+    foto: "",
   });
 
   useEffect(() => {
@@ -93,6 +107,7 @@ function CadastroPostagem() {
     setPostagem({
       ...postagem,
       tema: tema,
+      usuario: usuario
     });
   }, [tema]);
 
@@ -233,6 +248,7 @@ function CadastroPostagem() {
               </Select>
               <FormHelperText>Escolha um tipo de postagem</FormHelperText>
             </FormControl> */}
+            
           <FormControl fullWidth>
             <InputLabel>Escolha um tema</InputLabel>
             <Select
@@ -244,7 +260,7 @@ function CadastroPostagem() {
               }
             >
               {temas.map((tema) => (
-                <MenuItem value={tema.id}>{tema.tituloTema}</MenuItem>
+                <MenuItem style={{display:'block'}} value={tema.id}>{tema.tituloTema}</MenuItem>
               ))}
             </Select>
             <FormHelperText>Escolha um tipo de tema</FormHelperText>
