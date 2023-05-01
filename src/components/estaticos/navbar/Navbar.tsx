@@ -9,6 +9,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokenReducer";
 import { addToken } from "../../../store/tokens/Action";
 import { toast } from "react-toastify";
+import Button from '@mui/material/Button';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 
 function Navbar() {
 
@@ -31,30 +34,23 @@ function Navbar() {
       draggable: true,
       progress: undefined,
       theme: "light",
-      });
+    });
     history('/login')
   }
-  
+
+
   return (
     <>
       <AppBar position="static" style={{ background: "#d74883" }}>
         <Toolbar variant="dense">
           <Box display={"flex"} justifyContent={"space-between"} width={"100%"}>
-            <Box style={{ cursor: "pointer" }}>
-              <Typography variant="h5" color="#ffff">
-                Elas Exatas
-              </Typography>
-            </Box>
+            <Link to="/home">
+              <Box style={{ cursor: "pointer" }}>
+                <img src='https://cdn.discordapp.com/attachments/1070726474568568852/1101518731869438064/image.png' className="logoHome" />
+              </Box>
+            </Link>
 
-            <Box display="flex" justifyContent="start">
-              <Link to="/home">
-                <Box mx={1} style={{ cursor: "pointer" }}>
-                  <Typography variant="h6" color="#ffff">
-                    Home
-                  </Typography>
-                </Box>
-              </Link>
-
+            <Box display="flex" justifyContent="center" alignItems={"center"}>
               <Link to="/postagens">
                 <Box mx={1} style={{ cursor: "pointer" }}>
                   <Typography variant="h6" color="#ffff">
@@ -62,6 +58,7 @@ function Navbar() {
                   </Typography>
                 </Box>
               </Link>
+
               <Link to="/temas">
                 <Box mx={1} style={{ cursor: "pointer" }}>
                   <Typography variant="h6" color="#ffff">
@@ -83,11 +80,10 @@ function Navbar() {
                   </Typography>
                 </Box>
               </Link>
-
-              <Box mx={1} style={{cursor:'pointer'}}onClick={logout}>
-                  <Typography variant="h6" color="#ffff">
-                    Logout
-                  </Typography>
+              <Box mx={1} style={{ cursor: 'pointer' }} onClick={logout}>
+                <Typography variant="h6" color="#ffff">
+                  Logout
+                </Typography>
               </Box>
             </Box>
           </Box>
