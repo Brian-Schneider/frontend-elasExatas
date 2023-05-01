@@ -1,4 +1,8 @@
-.imagemNavbar {
-    width: max(35px, 4%);
+.menuPostagem {
+    display: block !important;
+
+}
+.logoHome{
+    width: max(200px, 4%);
     padding: 0 3px 0 0
 }

@@ -1,4 +1,15 @@
 .barrinha {
     background-color: #d74883 !important;
     text-decoration: none;
+    font-family: rot;
+  }
+  .sobreProjeto{
+    margin-left: 60px !important;
+    justify-content: center !important;
+  }
+
+  .imagemSobreProjeto{
+    width: max(350px, 65%);
+    margin: 0 auto;
+    display: block;
   }
