@@ -168,12 +168,80 @@ export default function Mulheres() {
             </Typography>
             <Typography paragraph>
               Ela é a quarta mulher a ganhar um Nobel de Física desde que a
-              premiação começou, em 1901. A pesquisadora afirmou que pretende inspirar
-              outras mulheres a buscarem seus sonhos na profissão. "Há muito o
-              campo é dominado por homens, mas há cada vez mais mulheres
+              premiação começou, em 1901. A pesquisadora afirmou que pretende
+              inspirar outras mulheres a buscarem seus sonhos na profissão. "Há
+              muito o campo é dominado por homens, mas há cada vez mais mulheres
               ingressando na disciplina. Estou muito feliz por poder ser um
               modelo para as jovens que estão pensando em começar", conclui a
               cientista.
+            </Typography>
+          </CardContent>
+        </Collapse>
+      </Card>
+
+      <Card sx={{ maxWidth: 345 }}>
+        <CardHeader title="Marie Curie" subheader="Química e Física" />
+        <CardMedia
+          component="img"
+          height="194"
+          image="https://static.todamateria.com.br/upload/ma/ri/mariecurie-cke.jpg"
+          alt="Marie Curie"
+        />
+        <CardContent>
+          <Typography variant="body2" color="text.secondary">
+            “Nada na vida deve ser temido, apenas compreendido. Agora é a hora
+            de entender mais, para que possamos temer menos.”
+          </Typography>
+        </CardContent>
+        <CardActions disableSpacing>
+          <ExpandMore
+            expand={expanded}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            aria-label="show more"
+          >
+            <ExpandMoreIcon />
+          </ExpandMore>
+        </CardActions>
+        <Collapse in={expanded} timeout="auto" unmountOnExit>
+          <CardContent>
+            <Typography paragraph style={{ fontWeight: "bold" }}>
+              História
+            </Typography>
+            <Typography paragraph>
+              Marie Curie nasceu no dia 7 de novembro de 1867 em Varsóvia,
+              capital e maior cidade da Polónia. Recebeu uma educação geral em
+              escolas locais e algum treinamento científico durante sua
+              juventude. Se envolveu em uma organização revolucionária
+              estudantil e achou prudente deixar sua cidade continuar seus
+              estudos em Paris, onde prosseguiu aprendendo física, química e
+              matemática na Universidade de Paris.
+            </Typography>
+            <Typography paragraph>
+              Suas primeiras pesquisas foram muitas vezes realizadas em
+              condições difíceis. Os arranjos de laboratório eram precários e
+              precisou se dedicar também ao ensino para ganhar a vida. A
+              descoberta da radioatividade inspirou Curie em suas brilhantes
+              pesquisas e análises que levaram ao isolamento do polônio e do
+              rádio. Marie desenvolveu métodos para a separação do rádio dos
+              resíduos radioativos em quantidades suficientes para permitir sua
+              caracterização e o estudo cuidadoso de suas propriedades,
+              principalmente terapêuticas.
+            </Typography>
+            <Typography paragraph>
+              Era tida em alta estima e admiração por cientistas de todo o
+              mundo. Fez parte do Conselho de Física Solvay e do Comitê de
+              Cooperação Intelectual da Liga das Nações. Seu trabalho está
+              registrado em numerosos artigos em revistas científicas e sua
+              importância se reflete nos inúmeros prêmios concedidos a ela.
+            </Typography>
+            <Typography paragraph>
+              Marie Curie recebeu muitos diplomas honorários de ciência,
+              medicina e direito, além de membros honorários de sociedades
+              científicas em todo o mundo. Recebeu o Prêmio Nobel de Física em
+              1903, por seu estudo sobre a radiação espontânea, e em 1911 um
+              segundo Prêmio Nobel, desta vez em Química , em reconhecimento ao
+              seu trabalho em radioatividade.
             </Typography>
           </CardContent>
         </Collapse>
