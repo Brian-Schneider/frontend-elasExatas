@@ -198,8 +198,8 @@ function CadastroPostagem() {
 
   return (
     <>
-      <Grid container justifyContent={"center"} mt={4}>
-        <form className="cadastroPostagem" onSubmit={onSubmit}>
+      <Grid container justifyContent={"center"}>
+        <form className="cadastroPostagem" style={{marginTop: "16px"}} onSubmit={onSubmit}>
           <Typography marginTop={4} variant="h3" align="center">
             Cadastrar Postagem
           </Typography>
