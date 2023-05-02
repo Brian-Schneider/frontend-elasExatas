@@ -41,14 +41,14 @@ function Perfil() {
 
     return (
         <>
-            <Grid container marginTop={5} alignItems={'center'} justifyContent={"center"}>
-                <Grid xs={3}  flexDirection={"column"} justifyContent={"space-around"}>
+            <Grid container margin={5} alignItems={'center'} justifyContent={"center"}>
+                <Grid xs={3} flexDirection={"column"} justifyContent={"space-around"}>
                     <Box >
-                    <Avatar src={usuario.foto} alt="Foto do perfil" style={{ width: '15rem', height: '15rem', margin: '0 auto' }} />
-                    </Box>                   
+                        <Avatar src={usuario.foto} alt="Foto do perfil" style={{ width: '15rem', height: '15rem', margin: '0 auto' }} />
+                    </Box>
                     <Box marginTop={'20px'}>
-                    <Typography variant="h5" align="center">{usuario.nome}</Typography>
-                    </Box>                  
+                        <Typography variant="h5" align="center">{usuario.nome}</Typography>
+                    </Box>
                 </Grid>
             </Grid>
 
@@ -58,26 +58,23 @@ function Perfil() {
                 justifyContent="center"
                 alignItems="center"
                 display={"flex"}
-                flexWrap={"wrap"}             
+                flexWrap={"wrap"}
             >
-                <Grid container spacing={2}>
+                <Grid container justifyContent={'center'} gap={2}>
                     {usuario.postagem?.map(postagem => (
-                        <Grid item xs={6} >
-                            <Card >
-                                <CardActionArea >
-                                    <CardMedia
-                                        component="img"
-                                        height="140"
-                                        image={postagem.imagem}
-                                    />
-                                    <CardContent>
-                                        <Typography gutterBottom variant="h5" component="h2">
+                        <div className="divDoPerfil">
+                            <Card className="cardDoPerfil" >
+                                <CardActionArea  >
+                                    <img src={postagem.imagem} alt='Foto da Postagem' />
+                                    <div >
+                                        <Typography variant="h5" component="h2">
                                             {postagem.tituloPostagem}
                                         </Typography>
                                         <Typography variant="body2" color="textSecondary" component="p">
                                             {postagem.conteudo}
                                         </Typography>
-                                    </CardContent>
+                                    </div>
+
                                 </CardActionArea>
                                 <CardActions>
                                     <Link to={`/editarpostagem/${postagem.id}`} className="text-decorator-none" >
@@ -96,7 +93,7 @@ function Perfil() {
                                     </Link>
                                 </CardActions>
                             </Card>
-                        </Grid>
+                        </div>
                     ))}
                 </Grid>
             </Grid>
