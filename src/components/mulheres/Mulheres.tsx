@@ -39,7 +39,7 @@ export default function Mulheres() {
     };
 
     return (
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ maxWidth: 345}}>
             <CardHeader         
                 title="Maryam Mirzakhani"
                 subheader="Matemática"

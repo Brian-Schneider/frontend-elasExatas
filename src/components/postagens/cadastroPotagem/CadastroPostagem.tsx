@@ -31,6 +31,8 @@ function CadastroPostagem() {
   const usuarioId = useSelector<TokenState, TokenState['id']>(
     (state) => state.id
   )
+
+  const subTemas = ["Eventos", "Postagens"]
   
   const { id } = useParams<{ id: string }>();
 
@@ -48,6 +50,13 @@ function CadastroPostagem() {
     tema: null,
     usuario: null
   });
+
+  function handleSubTema(event: ChangeEvent<HTMLSelectElement>) {
+    setPostagem({
+      ...postagem,
+    link: event.target.value
+    })
+  }
 
   const [tema, setTema] = useState<Tema>({
     id: 0,
@@ -227,27 +236,18 @@ function CadastroPostagem() {
             variant="outlined"
             fullWidth
           />
-          <TextField
-            value={postagem.link}
-            onChange={(event: ChangeEvent<HTMLInputElement>) =>
-              updateModel(event)
-            }
-            label="Link para Imagem da Postagem (não obrigatório)"
-            name="link"
-            id="link"
-            variant="outlined"
-            fullWidth
-          />
 
-          {/* <FormControl fullWidth>
+          <FormControl fullWidth>
               <InputLabel>Tipo de Postagem</InputLabel>
-              <Select variant="standard">
-                {abas.map((aba) => (
-                  <MenuItem value={postagem.link}>{aba}</MenuItem>
+              <Select variant="standard"
+                onChange={(event: ChangeEvent<HTMLSelectElement>) => handleSubTema(event)}
+              >
+                {subTemas.map((subTema) => (
+                  <MenuItem style={{display:'block'}} value={subTema}>{subTema}</MenuItem>
                 ))}
               </Select>
               <FormHelperText>Escolha um tipo de postagem</FormHelperText>
-            </FormControl> */}
+            </FormControl>
             
           <FormControl fullWidth>
             <InputLabel>Escolha um tema</InputLabel>
