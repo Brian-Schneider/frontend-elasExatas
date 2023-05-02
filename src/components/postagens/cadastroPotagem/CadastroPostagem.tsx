@@ -34,11 +34,12 @@ function CadastroPostagem() {
 
   const subTemas = ["Eventos", "Postagens"]
   
+
   const { id } = useParams<{ id: string }>();
 
   const [temas, setTemas] = useState<Tema[]>([]);
 
-  const abas = ["Postagens", "Eventos"];
+
 
   const [postagem, setPostagem] = useState<Postagem>({
     id: 0,
@@ -83,7 +84,7 @@ function CadastroPostagem() {
         draggable: true,
         progress: undefined,
         theme: "light",
-        });
+      });
       history("/login");
     }
   }, [token]);
@@ -146,7 +147,7 @@ function CadastroPostagem() {
           draggable: true,
           progress: undefined,
           theme: "light",
-          });
+        });
         history("/postagens");
       } catch (error) {
         toast.error('Erro! A postagem não foi atualizada. 😕', {
@@ -158,7 +159,7 @@ function CadastroPostagem() {
           draggable: true,
           progress: undefined,
           theme: "light",
-          });
+        });
       }
     } else {
       try {
@@ -177,7 +178,7 @@ function CadastroPostagem() {
           draggable: true,
           progress: undefined,
           theme: "light",
-          });
+        });
         history("/postagens");
       } catch (error) {
         console.log({ error });
@@ -190,7 +191,7 @@ function CadastroPostagem() {
           draggable: true,
           progress: undefined,
           theme: "light",
-          });
+        });
       }
     }
   }
@@ -222,6 +223,9 @@ function CadastroPostagem() {
             label="Texto da Postagem"
             name="conteudo"
             id="conteudo"
+            multiline
+            rows={4}
+            defaultValue="Default Value"
             variant="outlined"
             fullWidth
           />
@@ -247,8 +251,9 @@ function CadastroPostagem() {
                 ))}
               </Select>
               <FormHelperText>Escolha um tipo de postagem</FormHelperText>
+
             </FormControl>
-            
+
           <FormControl fullWidth>
             <InputLabel>Escolha um tema</InputLabel>
             <Select
@@ -260,7 +265,7 @@ function CadastroPostagem() {
               }
             >
               {temas.map((tema) => (
-                <MenuItem style={{display:'block'}} value={tema.id}>{tema.tituloTema}</MenuItem>
+                <MenuItem style={{ display: 'block' }} value={tema.id}>{tema.tituloTema}</MenuItem>
               ))}
             </Select>
             <FormHelperText>Escolha um tipo de tema</FormHelperText>
@@ -269,7 +274,7 @@ function CadastroPostagem() {
             variant="contained"
             color="primary"
             type="submit"
-            // disabled={tema.id === 0}
+          // disabled={tema.id === 0}
           >
             {tema.id === 0 ? "Selecionar um tema" : "Cadastrar"}
           </Button>

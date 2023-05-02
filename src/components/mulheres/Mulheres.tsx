@@ -1,88 +1,369 @@
-
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import Collapse from '@mui/material/Collapse';
-import Avatar from '@mui/material/Avatar';
-import IconButton, { IconButtonProps } from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import { red } from '@mui/material/colors';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+import * as React from "react";
+import { styled } from "@mui/material/styles";
+import Card from "@mui/material/Card";
+import CardHeader from "@mui/material/CardHeader";
+import CardMedia from "@mui/material/CardMedia";
+import CardContent from "@mui/material/CardContent";
+import CardActions from "@mui/material/CardActions";
+import Collapse from "@mui/material/Collapse";
+import IconButton, { IconButtonProps } from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { Box } from "@mui/material";
 
 interface ExpandMoreProps extends IconButtonProps {
-    expand: boolean;
+  expand: boolean;
 }
 
 const ExpandMore = styled((props: ExpandMoreProps) => {
-    const { expand, ...other } = props;
-    return <IconButton {...other} />;
+  const { expand, ...other } = props;
+  return <IconButton {...other} />;
 })(({ theme, expand }) => ({
-    transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
-        duration: theme.transitions.duration.shortest,
-    }),
+  transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
+  marginLeft: "auto",
+  transition: theme.transitions.create("transform", {
+    duration: theme.transitions.duration.shortest,
+  }),
 }));
 
 export default function Mulheres() {
-    const [expanded, setExpanded] = React.useState(false);
 
-    const handleExpandClick = () => {
-        setExpanded(!expanded);
-    };
+  const [expanded1, setExpanded1] = React.useState(false);
 
-    return (
-        <Card sx={{ maxWidth: 345}}>
-            <CardHeader         
-                title="Maryam Mirzakhani"
-                subheader="Matemática"
-            />
+  const handleExpandClick1 = () => {
+    setExpanded1(!expanded1);
+    setExpanded2(false)
+    setExpanded3(false)
+    setExpanded4(false)
+  };
+
+  const [expanded2, setExpanded2] = React.useState(false);
+
+  const handleExpandClick2 = () => {
+    setExpanded2(!expanded2);
+    setExpanded1(false)
+    setExpanded3(false)
+    setExpanded4(false)
+  };
+
+  const [expanded3, setExpanded3] = React.useState(false);
+
+  const handleExpandClick3 = () => {
+    setExpanded3(!expanded3);
+    setExpanded1(false)
+    setExpanded2(false)
+    setExpanded4(false)
+  };
+
+  const [expanded4, setExpanded4] = React.useState(false);
+
+
+  const handleExpandClick4 = () => {
+    setExpanded4(!expanded4);
+    setExpanded1(false)
+    setExpanded2(false)
+    setExpanded3(false)
+  };
+
+  return (
+    <>
+      <Box
+        display={"flex"}
+        justifyContent={"space-around"}
+        flexWrap={"wrap"}
+        gap={"40px"}
+        margin={'40px'}
+      >
+        <Box>
+          <Card sx={{ maxWidth: 345 }}>
+            <CardHeader title="Maryam Mirzakhani" subheader="Matemática" />
             <CardMedia
-                component="img"
-                height="194"
-                image="https://news.stanford.edu/wp-content/uploads/2017/07/Fields_Maryam_Mirzakhani.jpg"
-                alt="Paella dish"
+              component="img"
+              height="194"
+              image="https://news.stanford.edu/wp-content/uploads/2017/07/Fields_Maryam_Mirzakhani.jpg"
+              alt="Maryam Mirzakhani"
+
             />
             <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                “Você tem que gastar um pouco de energia e esforço para ver a beleza da matemática.”
-                    
-                </Typography>
+              <Typography variant="body2" color="text.secondary">
+                “Você tem que gastar um pouco de energia e esforço para ver a
+                beleza da matemática.”
+              </Typography>
             </CardContent>
-            <CardActions disableSpacing>               
-                <ExpandMore
-                    expand={expanded}
-                    onClick={handleExpandClick}
-                    aria-expanded={expanded}
-                    aria-label="show more"
-                >
-                    <ExpandMoreIcon />
-                </ExpandMore>
+            <CardActions disableSpacing>
+              <ExpandMore
+                expand={expanded1}
+                onClick={handleExpandClick1}
+                aria-expanded={expanded1}
+                aria-label="show more"
+              >
+                <ExpandMoreIcon />
+              </ExpandMore>
             </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
-                <CardContent>
-                    <Typography paragraph>História</Typography>
-                    <Typography paragraph>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis, dolorum autem? Porro molestiae asperiores aut velit ex tempore quisquam, dolor qui et ab doloribus itaque iste facere natus quo ea!
-                    </Typography>
-                    <Typography paragraph>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique excepturi dolorem consectetur ullam sint architecto labore impedit aspernatur vel inventore minus quas voluptates debitis deserunt, ipsum voluptas nam aperiam earum.
-                    </Typography>
-                    <Typography paragraph>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas quis, non, similique ut dolore eius, iusto molestiae temporibus sequi consectetur aperiam amet? Dolor, voluptatum! Animi natus totam placeat qui consectetur!
-                    </Typography>
-                    <Typography>
-                        A vida é uma caixinha de supresas.                    
-                    </Typography>
-                </CardContent>
+            <Collapse in={expanded1} timeout="auto" unmountOnExit>
+              <CardContent>
+                <Typography paragraph style={{ fontWeight: "bold" }}>
+                  História
+                </Typography>
+                <Typography paragraph>
+                  Maryam Mirzakhani nasceu em Teerã, capital do Irã, onde também
+                  cresceu. Apaixonada por leitura, concluiu o ensino fundamental
+                  quando a guerra Irã-Iraque chegava ao fim e, em paralelo, as
+                  oportunidades se abriam em seu país. Sendo assim, a aluna
+                  conquistou uma vaga em uma prestigiada escola de ensino médio
+                  para meninas, que desenvolvia “Talentos Excepcionais”.
+                </Typography>
+                <Typography paragraph>
+                  No primeiro ano de estudos, curiosamente Mirzakhani foi mal na
+                  matéria que mais tarde a consagraria. Foi no ano seguinte que
+                  as coisas começaram a mudar. Seu desempenho melhorou muito e,
+                  sendo assim, resolveu se inscrever na Olimpíada Internacional
+                  de Matemática do Irã, que nunca havia tido uma garota entre os
+                  competidores. Em 1994, aos 17 anos, sua pontuação na Olimpíada
+                  lhe rendeu uma medalha de ouro. A partir de então, o amor pela
+                  matéria só cresceu.
+                </Typography>
+                <Typography paragraph>
+                  Se formou em matemática na Sharif University no Teerã em 1999
+                  e fez pós-graduação na universidade de Harvard. Foi lá que,
+                  durante um seminário, ela se encantou com um assunto
+                  específico: a geometria hiperbólica, que se baseia em
+                  superfícies em forma de "rosquinha" com dois ou mais
+                  orifícios, que não seguem um padrão geométrico.
+                </Typography>
+                <Typography paragraph>
+                  Mirzakhani foi professora de matemática na Universidade de
+                  Stanford e muitos especialistas do ramo a consideram
+                  brilhante, pois suas pesquisas se conectam a muitas áreas da
+                  matemática, incluindo geometria diferencial, análise complexa
+                  e sistemas dinâmicos. Seu trabalho resultou em diversos
+                  artigos publicados nas principais revistas de matemática do
+                  mundo.
+                </Typography>
+                <Typography>
+                  Em 2014, ela foi premiada com a Medalha Fields, por “suas
+                  excepcionais contribuições à dinâmica e à geometria de
+                  superfícies de Riemann e seus espaços de Moduli”. O prêmio é
+                  considerado como a maior honraria que uma pessoa do ramo pode
+                  receber. Tanto é verdade, que costuma ser chamada de “Prêmio
+                  Nobel da Matemática“.
+                </Typography>
+              </CardContent>
             </Collapse>
-        </Card>
-    );
+          </Card>
+        </Box>
+
+        <Box>
+          <Card sx={{ maxWidth: 345 }}>
+            <CardHeader title="Andrea Ghez" subheader="Astrofísica" />
+            <CardMedia
+              component="img"
+              height="194"
+              image="https://static.glamurama.uol.com.br/2020/10/site_andrea-ghez_elena-zhukova_ucla.jpg"
+              alt="Andrea Ghez"
+            />
+            <CardContent>
+              <Typography variant="body2" color="text.secondary">
+                “Se você tem paixão pela ciência, há muito para ser feito.”
+              </Typography>
+            </CardContent>
+            <CardActions disableSpacing>
+              <ExpandMore
+                expand={expanded2}
+                onClick={handleExpandClick2}
+                aria-expanded={expanded2}
+                aria-label="show more"
+              >
+                <ExpandMoreIcon />
+              </ExpandMore>
+            </CardActions>
+            <Collapse in={expanded2} timeout="auto" unmountOnExit>
+              <CardContent>
+                <Typography paragraph style={{ fontWeight: "bold" }}>
+                  História
+                </Typography>
+                <Typography paragraph>
+                  Andrea Ghez nasceu em Nova York, Estados Unidos, porém ainda
+                  criança se mudou para Chicago onde frequentou a
+                  escola-laboratório da Universidade de Chicago. Ghez queria ser
+                  inicialmente uma bailarina, porém o pouso na lua a inspirou a
+                  querer tornar-se a primeira mulher astronauta e sua mãe apoiou
+                  esta decisão, além de sua professora ginasial de química.
+                  Começou a estudar matemática, mas logo depois mudou seus
+                  interesses para física.
+                </Typography>
+                <Typography paragraph>
+                  Obteve um bacharelado em física no Instituto de Tecnologia de
+                  Massachusetts (MIT) em 1987 e obteve seu Ph.D. em 1992 no
+                  Instituto de Tecnologia da Califórnia (Caltech). Suas
+                  pesquisas atuais envolvem o uso de técnicas de imagem de alta
+                  resolução espacial para estudar regiões de formação de
+                  estrelas e buracos negros supermaciços. A maneira de "ver" um
+                  buraco negro, por definição invisível, é observar os objetos
+                  que giram entorno e revelam a presença do gigante.
+                </Typography>
+                <Typography paragraph>
+                  Andrea ganhou o Prêmio Nobel de Física em 2020. O comitê da
+                  premiação afirmou que os trabalhos dela, deram à ciência a
+                  evidência mais convincente de um buraco negro supermassivo no
+                  centro da Via Láctea.
+                </Typography>
+                <Typography paragraph>
+                  Ela é a quarta mulher a ganhar um Nobel de Física desde que a
+                  premiação começou, em 1901. A pesquisadora afirmou que
+                  pretende inspirar outras mulheres a buscarem seus sonhos na
+                  profissão. "Há muito o campo é dominado por homens, mas há
+                  cada vez mais mulheres ingressando na disciplina. Estou muito
+                  feliz por poder ser um modelo para as jovens que estão
+                  pensando em começar", conclui a cientista.
+                </Typography>
+              </CardContent>
+            </Collapse>
+          </Card>
+        </Box>
+
+        <Box>
+          <Card sx={{ maxWidth: 345 }}>
+            <CardHeader title="Marie Curie" subheader="Química e Física" />
+            <CardMedia
+              component="img"
+              height="194"
+              image="https://static.todamateria.com.br/upload/ma/ri/mariecurie-cke.jpg"
+              alt="Marie Curie"
+            />
+            <CardContent>
+              <Typography variant="body2" color="text.secondary">
+                “Nada na vida deve ser temido, apenas compreendido.”
+              </Typography>
+            </CardContent>
+            <CardActions disableSpacing>
+              <ExpandMore
+                expand={expanded3}
+                onClick={handleExpandClick3}
+                aria-expanded={expanded3}
+                aria-label="show more"
+              >
+                <ExpandMoreIcon />
+              </ExpandMore>
+            </CardActions>
+            <Collapse in={expanded3} timeout="auto" unmountOnExit>
+              <CardContent>
+                <Typography paragraph style={{ fontWeight: "bold" }}>
+                  História
+                </Typography>
+                <Typography paragraph>
+                  Marie Curie nasceu no dia 7 de novembro de 1867 em Varsóvia,
+                  capital e maior cidade da Polónia. Recebeu uma educação geral
+                  em escolas locais e algum treinamento científico durante sua
+                  juventude. Se envolveu em uma organização revolucionária
+                  estudantil e achou prudente deixar sua cidade continuar seus
+                  estudos em Paris, onde prosseguiu aprendendo física, química e
+                  matemática na Universidade de Paris.
+                </Typography>
+                <Typography paragraph>
+                  Suas primeiras pesquisas foram muitas vezes realizadas em
+                  condições difíceis. Os arranjos de laboratório eram precários
+                  e precisou se dedicar também ao ensino para ganhar a vida. A
+                  descoberta da radioatividade inspirou Curie em suas brilhantes
+                  pesquisas e análises que levaram ao isolamento do polônio e do
+                  rádio. Marie desenvolveu métodos para a separação do rádio dos
+                  resíduos radioativos em quantidades suficientes para permitir
+                  sua caracterização e o estudo cuidadoso de suas propriedades,
+                  principalmente terapêuticas.
+                </Typography>
+                <Typography paragraph>
+                  Era tida em alta estima e admiração por cientistas de todo o
+                  mundo. Fez parte do Conselho de Física Solvay e do Comitê de
+                  Cooperação Intelectual da Liga das Nações. Seu trabalho está
+                  registrado em numerosos artigos em revistas científicas e sua
+                  importância se reflete nos inúmeros prêmios concedidos a ela.
+                </Typography>
+                <Typography paragraph>
+                  Marie Curie recebeu muitos diplomas honorários de ciência,
+                  medicina e direito, além de membros honorários de sociedades
+                  científicas em todo o mundo. Recebeu o Prêmio Nobel de Física
+                  em 1903, por seu estudo sobre a radiação espontânea, e em 1911
+                  um segundo Prêmio Nobel, desta vez em Química , em
+                  reconhecimento ao seu trabalho em radioatividade.
+                </Typography>
+              </CardContent>
+            </Collapse>
+          </Card>
+        </Box>
+
+        <Box>
+          <Card sx={{ maxWidth: 345 }}>
+            <CardHeader title="Frances Arnold" subheader="Engenharia Química" />
+            <CardMedia
+              component="img"
+              height="194"
+              image="https://www.aiche.org/sites/default/files/styles/chenected_lead_image/public/images/Chenected/lead/frances-arnold_0.jpg?itok=tKXdVPU9"
+              alt="Frances Arnold"
+            />
+            <CardContent>
+              <Typography variant="body2" color="text.secondary">
+                “Se você vai mudar o mundo, precisa ser destemida.”
+              </Typography>
+            </CardContent>
+            <CardActions disableSpacing>
+              <ExpandMore
+                expand={expanded4}
+                onClick={handleExpandClick4}
+                aria-expanded={expanded4}
+                aria-label="show more"
+              >
+                <ExpandMoreIcon />
+              </ExpandMore>
+            </CardActions>
+            <Collapse in={expanded4} timeout="auto" unmountOnExit>
+              <CardContent>
+                <Typography paragraph style={{ fontWeight: "bold" }}>
+                  História
+                </Typography>
+                <Typography paragraph>
+                  Frances Arnold nasceu e foi criada em Pittsburgh, Pensilvânia,
+                  nos Estados Unidos. A terceira de cinco filhos em uma família
+                  suburbana, dirigia um táxi e trabalhava como garçonete em um
+                  clube de jazz, além de participar de protestos contra a Guerra
+                  do Vietnã quando tinha 17 anos.
+                </Typography>
+                <Typography paragraph>
+                  Estudou engenharia mecânica e aeroespacial na Universidade de
+                  Princeton. Ela então continuou seus estudos na Universidade da
+                  Califórnia, Berkeley, onde obteve um doutorado em engenharia
+                  química em 1985. Posteriormente, trabalhou no Instituto de
+                  Tecnologia da Califórnia (Caltech). Além disso, se interessou
+                  por tecnologia de energia cedo e formou uma empresa em 2005
+                  para produzir combustíveis renováveis.
+                </Typography>
+                <Typography paragraph>
+                  Frances ganhou o Nobel de Química em 2018. A primeira mulher
+                  graduada de Princeton a receber o prêmio e a primeira pessoa
+                  que obteve seu diploma de graduação em Princeton a receber um
+                  Prêmio Nobel nas ciências naturais (química, física e
+                  fisiologia ou medicina). Frances Arnold usou mudanças
+                  genéticas e seleção para desenvolver proteínas que resolvem os
+                  problemas químicos da humanidade. Realizou a primeira evolução
+                  dirigida de enzimas e seus resultados incluem a fabricação de
+                  substâncias químicas mais ecológicas, como produtos
+                  farmacêuticos, e a produção de combustíveis renováveis.
+                </Typography>
+
+                <Typography paragraph>
+                  O trabalho de Arnold foi reconhecido por muitos prêmios, como
+                  o Prêmio Draper (a primeira mulher a recebê-lo) e a Medalha
+                  Nacional de Tecnologia e Inovação. Foi eleita para a Academia
+                  Americana de Artes e Ciências e incluída no Hall da Fama dos
+                  Inventores Nacionais. Ela foi a primeira mulher a ser eleita
+                  para todas as três Academias Nacionais nos Estados Unidos - a
+                  Academia Nacional de Engenharia, a Academia Nacional de
+                  Medicina, e a Academia Nacional de Ciências.
+                </Typography>
+              </CardContent>
+            </Collapse>
+          </Card>
+        </Box>
+      </Box>
+    </>
+  );
 }
