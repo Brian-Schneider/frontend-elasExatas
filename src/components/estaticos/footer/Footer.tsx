@@ -7,14 +7,14 @@ import React from 'react'
 import { Box } from '@mui/material';
 
 function Footer() {
-    return (<>
+    return (
+    <>
         <Grid
             container
             direction="row"
             justifyContent="center"
-            alignItems="center"
-            style={{ backgroundColor: '#d74883' }}>
-            <Box display={'flex'} alignItems="center" height= '8vh' width={'100%'} justifyContent={'space-around'}>
+            alignItems="center">
+            <Box display={'flex'} alignItems="center"  style={{ backgroundColor: '#d74883', height: '95px'}} width={'100%'} justifyContent={'space-around'}>
                 <Box>
                     <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
                         <Typography variant="h6" align="center" gutterBottom style={{ color: "#ffff", marginBottom:'10px' }}>

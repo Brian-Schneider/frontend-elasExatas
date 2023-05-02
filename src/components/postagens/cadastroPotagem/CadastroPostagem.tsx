@@ -20,6 +20,7 @@ import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokenReducer";
 import { toast } from "react-toastify";
 import Usuario from "../../../models/Usuario";
+import ShareIcon from '@mui/icons-material/Share';
 
 function CadastroPostagem() {
   const history = useNavigate();
@@ -198,9 +199,10 @@ function CadastroPostagem() {
 
   return (
     <>
-      <Grid container justifyContent={"center"} mt={4}>
-        <form className="cadastroPostagem" onSubmit={onSubmit}>
-          <Typography marginTop={4} variant="h3" align="center">
+      <Grid container justifyContent={"center"} className="background2">
+      <img src="https://i.imgur.com/WizgGzX.jpg" alt="" className="background1"/>
+        <form className="cadastroPostagem" onSubmit={onSubmit} style={{marginTop: "35px", marginBottom: "35px"}}>
+          <Typography marginTop={4} variant="h3" align="center" style={{color: "#5D3DB8", fontWeight: "bold", marginBottom: "20px"}}>
             Cadastrar Postagem
           </Typography>
 
@@ -274,6 +276,9 @@ function CadastroPostagem() {
             variant="contained"
             color="primary"
             type="submit"
+            style={{
+              backgroundColor: "#5D3DB8"
+            }}
           // disabled={tema.id === 0}
           >
             {tema.id === 0 ? "Selecionar um tema" : "Cadastrar"}
