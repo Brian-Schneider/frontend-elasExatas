@@ -32,10 +32,41 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 }));
 
 export default function Mulheres() {
-  const [expanded, setExpanded] = React.useState(false);
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
+  const [expanded1, setExpanded1] = React.useState(false);
+
+  const handleExpandClick1 = () => {
+    setExpanded1(!expanded1);
+    setExpanded2(false)
+    setExpanded3(false)
+    setExpanded4(false)
+  };
+
+  const [expanded2, setExpanded2] = React.useState(false);
+
+  const handleExpandClick2 = () => {
+    setExpanded2(!expanded2);
+    setExpanded1(false)
+    setExpanded3(false)
+    setExpanded4(false)
+  };
+
+  const [expanded3, setExpanded3] = React.useState(false);
+
+  const handleExpandClick3 = () => {
+    setExpanded3(!expanded3);
+    setExpanded1(false)
+    setExpanded2(false)
+    setExpanded4(false)
+  };
+
+  const [expanded4, setExpanded4] = React.useState(false);
+
+  const handleExpandClick4 = () => {
+    setExpanded4(!expanded4);
+    setExpanded1(false)
+    setExpanded2(false)
+    setExpanded3(false)
   };
 
   return (
@@ -63,15 +94,15 @@ export default function Mulheres() {
             </CardContent>
             <CardActions disableSpacing>
               <ExpandMore
-                expand={expanded}
-                onClick={handleExpandClick}
-                aria-expanded={expanded}
+                expand={expanded1}
+                onClick={handleExpandClick1}
+                aria-expanded={expanded1}
                 aria-label="show more"
               >
                 <ExpandMoreIcon />
               </ExpandMore>
             </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
+            <Collapse in={expanded1} timeout="auto" unmountOnExit>
               <CardContent>
                 <Typography paragraph style={{ fontWeight: "bold" }}>
                   História
@@ -140,15 +171,15 @@ export default function Mulheres() {
             </CardContent>
             <CardActions disableSpacing>
               <ExpandMore
-                expand={expanded}
-                onClick={handleExpandClick}
-                aria-expanded={expanded}
+                expand={expanded2}
+                onClick={handleExpandClick2}
+                aria-expanded={expanded2}
                 aria-label="show more"
               >
                 <ExpandMoreIcon />
               </ExpandMore>
             </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
+            <Collapse in={expanded2} timeout="auto" unmountOnExit>
               <CardContent>
                 <Typography paragraph style={{ fontWeight: "bold" }}>
                   História
@@ -209,15 +240,15 @@ export default function Mulheres() {
             </CardContent>
             <CardActions disableSpacing>
               <ExpandMore
-                expand={expanded}
-                onClick={handleExpandClick}
-                aria-expanded={expanded}
+                expand={expanded3}
+                onClick={handleExpandClick3}
+                aria-expanded={expanded3}
                 aria-label="show more"
               >
                 <ExpandMoreIcon />
               </ExpandMore>
             </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
+            <Collapse in={expanded3} timeout="auto" unmountOnExit>
               <CardContent>
                 <Typography paragraph style={{ fontWeight: "bold" }}>
                   História
@@ -278,15 +309,15 @@ export default function Mulheres() {
             </CardContent>
             <CardActions disableSpacing>
               <ExpandMore
-                expand={expanded}
-                onClick={handleExpandClick}
-                aria-expanded={expanded}
+                expand={expanded4}
+                onClick={handleExpandClick4}
+                aria-expanded={expanded4}
                 aria-label="show more"
               >
                 <ExpandMoreIcon />
               </ExpandMore>
             </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
+            <Collapse in={expanded4} timeout="auto" unmountOnExit>
               <CardContent>
                 <Typography paragraph style={{ fontWeight: "bold" }}>
                   História
