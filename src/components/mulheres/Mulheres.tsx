@@ -27,51 +27,64 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 }));
 
 export default function Mulheres() {
-
   const [expanded1, setExpanded1] = React.useState(false);
 
   const handleExpandClick1 = () => {
     setExpanded1(!expanded1);
-    setExpanded2(false)
-    setExpanded3(false)
-    setExpanded4(false)
+    setExpanded2(false);
+    setExpanded3(false);
+    setExpanded4(false);
+    setExpanded5(false);
   };
 
   const [expanded2, setExpanded2] = React.useState(false);
 
   const handleExpandClick2 = () => {
     setExpanded2(!expanded2);
-    setExpanded1(false)
-    setExpanded3(false)
-    setExpanded4(false)
+    setExpanded1(false);
+    setExpanded3(false);
+    setExpanded4(false);
+    setExpanded5(false);
   };
 
   const [expanded3, setExpanded3] = React.useState(false);
 
   const handleExpandClick3 = () => {
     setExpanded3(!expanded3);
-    setExpanded1(false)
-    setExpanded2(false)
-    setExpanded4(false)
+    setExpanded1(false);
+    setExpanded2(false);
+    setExpanded4(false);
+    setExpanded5(false);
   };
 
   const [expanded4, setExpanded4] = React.useState(false);
 
   const handleExpandClick4 = () => {
     setExpanded4(!expanded4);
-    setExpanded1(false)
-    setExpanded2(false)
-    setExpanded3(false)
+    setExpanded1(false);
+    setExpanded2(false);
+    setExpanded3(false);
+    setExpanded5(false);
+  };
+
+  const [expanded5, setExpanded5] = React.useState(false);
+
+  const handleExpandClick5 = () => {
+    setExpanded5(!expanded5);
+    setExpanded1(false);
+    setExpanded2(false);
+    setExpanded3(false);
+    setExpanded4(false);
   };
 
   return (
     <>
       <Box
         display={"flex"}
-        justifyContent={"space-around"}
+        justifyContent={"center"}
         flexWrap={"wrap"}
         gap={"40px"}
-        margin={'40px'}
+        margin={"40px"}
       >
         <Box>
           <Card sx={{ maxWidth: 345 }}>
@@ -356,6 +369,75 @@ export default function Mulheres() {
                   para todas as três Academias Nacionais nos Estados Unidos - a
                   Academia Nacional de Engenharia, a Academia Nacional de
                   Medicina, e a Academia Nacional de Ciências.
+                </Typography>
+              </CardContent>
+            </Collapse>
+          </Card>
+        </Box>
+
+
+        <Box>
+          <Card sx={{ maxWidth: 345 }}>
+            <CardHeader title="Carolyn Bertozzi" subheader="Química" />
+            <CardMedia
+              component="img"
+              height="194"
+              image="https://news.stanford.edu/report/wp-content/uploads/sites/3/2022/02/bertozzi.jpeg"
+              alt="Carolyn Bertozzi"
+            />
+            <CardContent>
+              <Typography variant="body2" color="text.secondary">
+                “As oportunidades estão sempre passando e, se você as vê, deve
+                ver aonde o caminho a leva.”
+              </Typography>
+            </CardContent>
+            <CardActions disableSpacing>
+              <ExpandMore
+                expand={expanded5}
+                onClick={handleExpandClick5}
+                aria-expanded={expanded5}
+                aria-label="show more"
+              >
+                <ExpandMoreIcon />
+              </ExpandMore>
+            </CardActions>
+            <Collapse in={expanded5} timeout="auto" unmountOnExit>
+              <CardContent>
+                <Typography paragraph style={{ fontWeight: "bold" }}>
+                  História
+                </Typography>
+                <Typography paragraph>
+                  Carolyn Bertozzi cresceu em Lexington, Massachusetts, nos
+                  Estados Unidos. Jogou futebol no colégio e foi recrutada para
+                  Harvard com uma bolsa de estudos para atletas. Ela começou
+                  como estudante de biologia, mas no segundo ano fez uma aula de
+                  química orgânica, que adorou, embora continuasse a ter aulas
+                  de biologia, mudou sua especialização para química.
+                </Typography>
+                <Typography paragraph>
+                  Apesar dos obstáculos, Bertozzi juntou-se ao corpo docente da
+                  UC Berkeley em 1996 e depois à Universidade de Stanford em
+                  junho de 2015. Ganhou uma bolsa ao mérito da MacArthur em 1999
+                  e foi eleita para o Instituto de Medicina, a Academia Nacional
+                  de Ciências e a Academia Americana de Artes e Ciências. Também
+                  recebeu o Prémio Lemelson-MIT (a primeira mulher a recebê-lo),
+                  o Prémio Heinrich Wieland, o Prémio ACS em Química Pura e o
+                  Prémio de Química do Futuro Solv.
+                </Typography>
+                <Typography paragraph>
+                  Ela desenvolveu reações bioortogonais que ocorrem dentro de
+                  organismos vivos sem interromper a química normal da célula.
+                  Essas reações agora são usadas para explorar células, rastrear
+                  processos biológicos e melhorar o direcionamento de produtos
+                  farmacêuticos contra o câncer.
+                </Typography>
+
+                <Typography paragraph>
+                  A pesquisa na interface da química e da biologia de Bertozzi
+                  ganhou o Nobel pelo seu trabalho na “química de cliques”,
+                  maneiras pelas quais as moléculas podem encaixar-se para criar
+                  reações rápidas e evitar subprodutos. Carolyn Bertozzi foi a
+                  segunda pessoa LGBTI+ a vencer um Prémio Nobel em 2022.
                 </Typography>
               </CardContent>
             </Collapse>
