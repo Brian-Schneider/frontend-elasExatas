@@ -42,7 +42,7 @@ export default function Mulheres() {
     <>
       <Box
         display={"flex"}
-        justifyContent={"space-evenly"}
+        justifyContent={"space-around"}
         flexWrap={"wrap"}
         gap={"40px"}
       >
@@ -256,6 +256,79 @@ export default function Mulheres() {
                   em 1903, por seu estudo sobre a radiação espontânea, e em 1911
                   um segundo Prêmio Nobel, desta vez em Química , em
                   reconhecimento ao seu trabalho em radioatividade.
+                </Typography>
+              </CardContent>
+            </Collapse>
+          </Card>
+        </Box>
+
+        <Box>
+          <Card sx={{ maxWidth: 345 }}>
+            <CardHeader title="Frances Arnold" subheader="Engenharia Química" />
+            <CardMedia
+              component="img"
+              height="194"
+              image="https://www.aiche.org/sites/default/files/styles/chenected_lead_image/public/images/Chenected/lead/frances-arnold_0.jpg?itok=tKXdVPU9"
+              alt="Frances Arnold"
+            />
+            <CardContent>
+              <Typography variant="body2" color="text.secondary">
+                “Se você vai mudar o mundo, precisa ser destemida.”
+              </Typography>
+            </CardContent>
+            <CardActions disableSpacing>
+              <ExpandMore
+                expand={expanded}
+                onClick={handleExpandClick}
+                aria-expanded={expanded}
+                aria-label="show more"
+              >
+                <ExpandMoreIcon />
+              </ExpandMore>
+            </CardActions>
+            <Collapse in={expanded} timeout="auto" unmountOnExit>
+              <CardContent>
+                <Typography paragraph style={{ fontWeight: "bold" }}>
+                  História
+                </Typography>
+                <Typography paragraph>
+                  Frances Arnold nasceu e foi criada em Pittsburgh, Pensilvânia,
+                  nos Estados Unidos. A terceira de cinco filhos em uma família
+                  suburbana, dirigia um táxi e trabalhava como garçonete em um
+                  clube de jazz, além de participar de protestos contra a Guerra
+                  do Vietnã quando tinha 17 anos.
+                </Typography>
+                <Typography paragraph>
+                  Estudou engenharia mecânica e aeroespacial na Universidade de
+                  Princeton. Ela então continuou seus estudos na Universidade da
+                  Califórnia, Berkeley, onde obteve um doutorado em engenharia
+                  química em 1985. Posteriormente, trabalhou no Instituto de
+                  Tecnologia da Califórnia (Caltech). Além disso, se interessou
+                  por tecnologia de energia cedo e formou uma empresa em 2005
+                  para produzir combustíveis renováveis.
+                </Typography>
+                <Typography paragraph>
+                  Frances ganhou o Nobel de Química em 2018. A primeira mulher
+                  graduada de Princeton a receber o prêmio e a primeira pessoa
+                  que obteve seu diploma de graduação em Princeton a receber um
+                  Prêmio Nobel nas ciências naturais (química, física e
+                  fisiologia ou medicina). Frances Arnold usou mudanças
+                  genéticas e seleção para desenvolver proteínas que resolvem os
+                  problemas químicos da humanidade. Realizou a primeira evolução
+                  dirigida de enzimas e seus resultados incluem a fabricação de
+                  substâncias químicas mais ecológicas, como produtos
+                  farmacêuticos, e a produção de combustíveis renováveis.
+                </Typography>
+
+                <Typography paragraph>
+                  O trabalho de Arnold foi reconhecido por muitos prêmios, como
+                  o Prêmio Draper (a primeira mulher a recebê-lo) e a Medalha
+                  Nacional de Tecnologia e Inovação. Foi eleita para a Academia
+                  Americana de Artes e Ciências e incluída no Hall da Fama dos
+                  Inventores Nacionais. Ela foi a primeira mulher a ser eleita
+                  para todas as três Academias Nacionais nos Estados Unidos - a
+                  Academia Nacional de Engenharia, a Academia Nacional de
+                  Medicina, e a Academia Nacional de Ciências.
                 </Typography>
               </CardContent>
             </Collapse>
