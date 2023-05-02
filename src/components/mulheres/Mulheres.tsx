@@ -57,6 +57,7 @@ export default function Mulheres() {
 
   const [expanded4, setExpanded4] = React.useState(false);
 
+
   const handleExpandClick4 = () => {
     setExpanded4(!expanded4);
     setExpanded1(false)
@@ -81,6 +82,7 @@ export default function Mulheres() {
               height="194"
               image="https://news.stanford.edu/wp-content/uploads/2017/07/Fields_Maryam_Mirzakhani.jpg"
               alt="Maryam Mirzakhani"
+
             />
             <CardContent>
               <Typography variant="body2" color="text.secondary">

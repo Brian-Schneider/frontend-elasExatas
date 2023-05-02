@@ -11,6 +11,7 @@ import "./CadastroTema.css";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokenReducer";
 import { toast } from "react-toastify";
+import Postagem from "../../../models/Postagem";
 
 function CadastroTema() {
 
@@ -19,6 +20,8 @@ function CadastroTema() {
   const token = useSelector<TokenState, TokenState["token"]>(
     (state) => state.token
   )
+
+  const [postagens, setPostagem] = useState<Postagem[]>([])
 
   const { id } = useParams<{ id: string }>();
 
@@ -64,6 +67,7 @@ function CadastroTema() {
       history("/login");
     }
   }, [token]);
+  
 
   async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
