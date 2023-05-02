@@ -32,6 +32,10 @@ function ListaPostagem(props) {
         (state) => state.token
     )
 
+    const usuarioId = useSelector<TokenState, TokenState['id']>(
+        (state) => state.id
+      )
+
     
     const history = useNavigate();
 
@@ -101,7 +105,7 @@ function ListaPostagem(props) {
                         <Card variant="outlined">
                             <CardContent>
                                 <Typography color="textSecondary" gutterBottom>
-                                    Postagens
+                                    {postagem.link}
                                 </Typography>
                                 <Typography variant="h5" component="h2">
                                     {postagem.tituloPostagem}
@@ -130,8 +134,8 @@ function ListaPostagem(props) {
 
                             </CardContent>
                             <CardActions>
-                                <Box display="flex" justifyContent="center" mb={1.5}>
-
+                                
+                                    {postagem.usuario?.id === +usuarioId &&  <Box display="flex" justifyContent="center" mb={1.5}>
                                     <Link to={`/editarpostagem/${postagem.id}`} className="text-decorator-none" >
                                         <Box mx={1} >
                                             <Button variant="contained" className='btnAtualizarPos' size='small' color="primary" >
@@ -146,7 +150,9 @@ function ListaPostagem(props) {
                                             </Button>
                                         </Box>
                                     </Link>
-                                </Box>
+                                </Box>}
+
+                                    
                             </CardActions>
                         </Card>
                     </Box>
@@ -161,7 +167,7 @@ function ListaPostagem(props) {
                         <Card variant="outlined">
                             <CardContent>
                                 <Typography color="textSecondary" gutterBottom>
-                                    Postagens
+                                    {postagem.link}
                                 </Typography>
                                 <Typography variant="h5" component="h2">
                                     {postagem.tituloPostagem}
@@ -190,8 +196,7 @@ function ListaPostagem(props) {
 
                             </CardContent>
                             <CardActions>
-                                <Box display="flex" justifyContent="center" mb={1.5}>
-
+                            {postagem.usuario?.id === +usuarioId &&  <Box display="flex" justifyContent="center" mb={1.5}>
                                     <Link to={`/editarpostagem/${postagem.id}`} className="text-decorator-none" >
                                         <Box mx={1} >
                                             <Button variant="contained" className='btnAtualizarPos' size='small' color="primary" >
@@ -206,7 +211,7 @@ function ListaPostagem(props) {
                                             </Button>
                                         </Box>
                                     </Link>
-                                </Box>
+                                </Box>}
                             </CardActions>
                         </Card>
                     </Box>
@@ -221,7 +226,7 @@ function ListaPostagem(props) {
                         <Card variant="outlined">
                             <CardContent>
                                 <Typography color="textSecondary" gutterBottom>
-                                    Postagens
+                                    {postagem.link}
                                 </Typography>
                                 <Typography variant="h5" component="h2">
                                     {postagem.tituloPostagem}
@@ -250,8 +255,7 @@ function ListaPostagem(props) {
 
                             </CardContent>
                             <CardActions>
-                                <Box display="flex" justifyContent="center" mb={1.5}>
-
+                            {postagem.usuario?.id === +usuarioId &&  <Box display="flex" justifyContent="center" mb={1.5}>
                                     <Link to={`/editarpostagem/${postagem.id}`} className="text-decorator-none" >
                                         <Box mx={1} >
                                             <Button variant="contained" className='btnAtualizarPos' size='small' color="primary" >
@@ -266,7 +270,7 @@ function ListaPostagem(props) {
                                             </Button>
                                         </Box>
                                     </Link>
-                                </Box>
+                                </Box>}
                             </CardActions>
                         </Card>
                     </Box>

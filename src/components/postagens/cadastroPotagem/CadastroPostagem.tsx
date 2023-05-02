@@ -199,6 +199,8 @@ function CadastroPostagem() {
 
   return (
     <>
+
+ 
       <Grid container justifyContent={"center"} className="background2">
       <img src="https://i.imgur.com/WizgGzX.jpg" alt="" className="background1"/>
         <form className="cadastroPostagem" onSubmit={onSubmit} style={{marginTop: "35px", marginBottom: "35px"}}>

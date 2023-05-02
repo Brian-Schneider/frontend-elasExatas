@@ -134,13 +134,22 @@ function Carousel(props)
             disableDotsControls={true}
             disableButtonsControls={true}
             autoPlayInterval={3000} /> :
-            <Grid container direction='row' justifyContent='center' alignItems='center' marginTop={"-40px"}>
-                {items.map((item) => (
-                    <Grid item xs={4} justifyContent='center' alignItems='center' paddingBottom={5}>
-                        {item}
-                    </Grid>
+            <Box display={"flex"}
+            justifyContent={"space-around"}
+            flexWrap={"wrap"}
+            gap={"40px"}
+            margin={'40px'}>
+                 <Grid display={"flex"}
+                    justifyContent={"space-around"}
+                    flexWrap={"wrap"}
+                    gap={"170px"}
+                    margin={'40px'}>
+                        {items.map((item) => (
+                        <Box>{item}</Box>
+                        
                 ))}
-            </Grid>
+                 </Grid>
+            </Box>
         }
          </>
 
