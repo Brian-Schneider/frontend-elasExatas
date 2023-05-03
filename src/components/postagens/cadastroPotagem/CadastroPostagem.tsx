@@ -53,10 +53,10 @@ function CadastroPostagem() {
     usuario: null
   });
 
-  function handleSubTema(event: ChangeEvent<HTMLSelectElement>) {
+  function handleSubTema(sub: any) {
     setPostagem({
       ...postagem,
-    link: event.target.value
+    link: sub
     })
   }
 
@@ -248,7 +248,7 @@ function CadastroPostagem() {
           <FormControl fullWidth>
               <InputLabel>Tipo de Postagem</InputLabel>
               <Select variant="standard"
-                onChange={(event: ChangeEvent<HTMLSelectElement>) => handleSubTema(event)}
+                onChange={(event) => handleSubTema(event.target.value)}
               >
                 {subTemas.map((subTema) => (
                   <MenuItem style={{display:'block'}} value={subTema}>{subTema}</MenuItem>
