@@ -1,7 +1,7 @@
 .divDoPerfil {
     display: flex;
     flex-direction: column;
-    width: 45%;
+    width: 100%;
     margin-bottom: 5px;
 }
 
@@ -29,9 +29,26 @@
 }
 
 .backgroundPerfil1{
-    position: absolute;
-    opacity: 0.4;
-    height: auto;
-    min-height: 80vh;
-    max-width: 100%;
+    background-image: url('https://i.imgur.com/gESSQVG.jpg');
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.gridPerfil{
+    width: 80vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 1rem;
+}
+
+.textoCard{
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    text-align: justify;
+    padding: 0 .5rem;
 }

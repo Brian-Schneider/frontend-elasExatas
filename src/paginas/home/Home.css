@@ -1,16 +1,16 @@
 .titulo{
-font-family: 'Roboto', sans-serif !important;
-}
-
-.botao{
-    border-radius: 15px!important;
-}
-.fotoHome {
-    width: max(350px, 65%);
-    margin: 0 auto;
-    display: block;
+    font-family: 'Roboto', sans-serif !important;
+    }
     
-}
-.postagens{
-    background-color: white !important;
-}
+    .botao{
+        border-radius: 15px!important;
+    }
+    .fotoHome {
+        width: max(350px, 65%);
+        margin: 0 auto;
+        display: block;
+        
+    }
+    .postagens{
+        background-color: white !important;
+    }

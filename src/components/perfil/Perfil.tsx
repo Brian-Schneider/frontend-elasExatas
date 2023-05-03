@@ -40,15 +40,14 @@ function Perfil() {
     }, [])
 
     return (
-        <div>
-            <img src="https://i.imgur.com/gESSQVG.jpg" alt="" className="backgroundPerfil1"/>
+        <div className="backgroundPerfil1">
             <Grid container paddingTop={5} alignItems={'center'} justifyContent={"center"}>
                 <Grid xs={3} flexDirection={"column"} justifyContent={"space-around"}>
                     <Box >
                         <Avatar src={usuario.foto} alt="Foto do perfil" style={{ width: '15rem', height: '15rem', margin: '0 auto' }} />
                     </Box>
                     <Box marginTop={'20px'}>
-                        <Typography variant="h4" align="center" style={{fontWeight: "bold"}}>{usuario.nome} </Typography>
+                        <Typography variant="h4" align="center" style={{fontWeight: "bold", marginBottom: "30px"}}>{usuario.nome} </Typography>
                     </Box>
                 </Grid>
             </Grid>
@@ -60,9 +59,9 @@ function Perfil() {
                 alignItems="center"
                 display={"flex"}
                 flexWrap={"wrap"}
-                marginBottom={4}
+                paddingBottom={4}
             >
-                <Grid container justifyContent={'center'} gap={2}>
+                <div className="gridPerfil">
                     {usuario.postagem?.map(postagem => (
                         <div className="divDoPerfil">
                             <Card className="cardDoPerfil" >
@@ -72,7 +71,7 @@ function Perfil() {
                                         <Typography variant="h6" component="h2" style={{marginBottom: "10px", marginLeft: "5px", fontWeight: "bold"}}>
                                             {postagem.tituloPostagem}
                                         </Typography>
-                                        <Typography variant="body2" color="textSecondary" component="p" style={{marginLeft: "5px"}}>
+                                        <Typography variant="body2" color="textSecondary" component="p" className="textoCard">
                                             {postagem.conteudo}
                                         </Typography>
                                     </div>
@@ -97,7 +96,7 @@ function Perfil() {
                             </Card>
                         </div>
                     ))}
-                </Grid>
+                </div>
             </Grid>
 
         </div>
