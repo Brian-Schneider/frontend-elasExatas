@@ -41,28 +41,6 @@ function Home() {
           </Box>
           <Box display="flex" justifyContent="center">
             <Box marginRight={1}></Box>
-            <Button
-              variant="outlined"
-              style={{
-                borderColor: "white",
-                backgroundColor: "#107bbf",
-                color: "white",
-              }}
-            >
-              Ver Postagens
-            </Button>
-            <Link to="/cadastropostagem">
-              <Button
-                variant="outlined"
-                style={{
-                  borderColor: "white",
-                  backgroundColor: "#107bbf",
-                  color: "white",
-                }}
-              >
-                Cadastrar Postagens
-              </Button>
-            </Link>
           </Box>
         </Grid>
         <Grid item xs={6}>
