@@ -20,6 +20,7 @@ import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokenReducer";
 import { toast } from "react-toastify";
 import Usuario from "../../../models/Usuario";
+import ShareIcon from '@mui/icons-material/Share';
 
 function CadastroPostagem() {
   const history = useNavigate();
@@ -31,12 +32,15 @@ function CadastroPostagem() {
   const usuarioId = useSelector<TokenState, TokenState['id']>(
     (state) => state.id
   )
+
+  const subTemas = ["Eventos", "Postagens"]
   
+
   const { id } = useParams<{ id: string }>();
 
   const [temas, setTemas] = useState<Tema[]>([]);
 
-  const abas = ["Postagens", "Eventos"];
+
 
   const [postagem, setPostagem] = useState<Postagem>({
     id: 0,
@@ -48,6 +52,13 @@ function CadastroPostagem() {
     tema: null,
     usuario: null
   });
+
+  function handleSubTema(event: ChangeEvent<HTMLSelectElement>) {
+    setPostagem({
+      ...postagem,
+    link: event.target.value
+    })
+  }
 
   const [tema, setTema] = useState<Tema>({
     id: 0,
@@ -74,7 +85,7 @@ function CadastroPostagem() {
         draggable: true,
         progress: undefined,
         theme: "light",
-        });
+      });
       history("/login");
     }
   }, [token]);
@@ -137,7 +148,7 @@ function CadastroPostagem() {
           draggable: true,
           progress: undefined,
           theme: "light",
-          });
+        });
         history("/postagens");
       } catch (error) {
         toast.error('Erro! A postagem não foi atualizada. 😕', {
@@ -149,7 +160,7 @@ function CadastroPostagem() {
           draggable: true,
           progress: undefined,
           theme: "light",
-          });
+        });
       }
     } else {
       try {
@@ -168,7 +179,7 @@ function CadastroPostagem() {
           draggable: true,
           progress: undefined,
           theme: "light",
-          });
+        });
         history("/postagens");
       } catch (error) {
         console.log({ error });
@@ -181,16 +192,19 @@ function CadastroPostagem() {
           draggable: true,
           progress: undefined,
           theme: "light",
-          });
+        });
       }
     }
   }
 
   return (
     <>
-      <Grid container justifyContent={"center"} mt={4}>
-        <form className="cadastroPostagem" onSubmit={onSubmit}>
-          <Typography marginTop={4} variant="h3" align="center">
+
+ 
+      <Grid container justifyContent={"center"} className="background2">
+      <img src="https://i.imgur.com/WizgGzX.jpg" alt="" className="background1"/>
+        <form className="cadastroPostagem" onSubmit={onSubmit} style={{marginTop: "35px", marginBottom: "35px"}}>
+          <Typography marginTop={4} variant="h3" align="center" style={{color: "#5D3DB8", fontWeight: "bold", marginBottom: "20px"}}>
             Cadastrar Postagem
           </Typography>
 
@@ -213,6 +227,9 @@ function CadastroPostagem() {
             label="Texto da Postagem"
             name="conteudo"
             id="conteudo"
+            multiline
+            rows={4}
+            defaultValue="Default Value"
             variant="outlined"
             fullWidth
           />
@@ -227,28 +244,20 @@ function CadastroPostagem() {
             variant="outlined"
             fullWidth
           />
-          <TextField
-            value={postagem.link}
-            onChange={(event: ChangeEvent<HTMLInputElement>) =>
-              updateModel(event)
-            }
-            label="Link para Imagem da Postagem (não obrigatório)"
-            name="link"
-            id="link"
-            variant="outlined"
-            fullWidth
-          />
 
-          {/* <FormControl fullWidth>
+          <FormControl fullWidth>
               <InputLabel>Tipo de Postagem</InputLabel>
-              <Select variant="standard">
-                {abas.map((aba) => (
-                  <MenuItem value={postagem.link}>{aba}</MenuItem>
+              <Select variant="standard"
+                onChange={(event: ChangeEvent<HTMLSelectElement>) => handleSubTema(event)}
+              >
+                {subTemas.map((subTema) => (
+                  <MenuItem style={{display:'block'}} value={subTema}>{subTema}</MenuItem>
                 ))}
               </Select>
               <FormHelperText>Escolha um tipo de postagem</FormHelperText>
-            </FormControl> */}
-            
+
+            </FormControl>
+
           <FormControl fullWidth>
             <InputLabel>Escolha um tema</InputLabel>
             <Select
@@ -260,7 +269,7 @@ function CadastroPostagem() {
               }
             >
               {temas.map((tema) => (
-                <MenuItem style={{display:'block'}} value={tema.id}>{tema.tituloTema}</MenuItem>
+                <MenuItem style={{ display: 'block' }} value={tema.id}>{tema.tituloTema}</MenuItem>
               ))}
             </Select>
             <FormHelperText>Escolha um tipo de tema</FormHelperText>
@@ -269,7 +278,10 @@ function CadastroPostagem() {
             variant="contained"
             color="primary"
             type="submit"
-            // disabled={tema.id === 0}
+            style={{
+              backgroundColor: "#5D3DB8"
+            }}
+          // disabled={tema.id === 0}
           >
             {tema.id === 0 ? "Selecionar um tema" : "Cadastrar"}
           </Button>

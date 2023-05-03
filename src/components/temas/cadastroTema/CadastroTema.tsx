@@ -11,6 +11,7 @@ import "./CadastroTema.css";
 import { useSelector } from "react-redux";
 import { TokenState } from "../../../store/tokens/tokenReducer";
 import { toast } from "react-toastify";
+import Postagem from "../../../models/Postagem";
 
 function CadastroTema() {
 
@@ -19,6 +20,8 @@ function CadastroTema() {
   const token = useSelector<TokenState, TokenState["token"]>(
     (state) => state.token
   )
+
+  const [postagens, setPostagem] = useState<Postagem[]>([])
 
   const { id } = useParams<{ id: string }>();
 
@@ -64,6 +67,7 @@ function CadastroTema() {
       history("/login");
     }
   }, [token]);
+  
 
   async function onSubmit(event: ChangeEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -133,19 +137,20 @@ function CadastroTema() {
 
   return (
     <>
-      <Grid container justifyContent={"center"} mt={4}>
-        <Grid item xs={6}>
+      <Grid container justifyContent={"center"} className="backgroundTema2">
+      <img src="https://i.imgur.com/WizgGzX.jpg" alt="" className="backgroundTema1"/>
+      <form className="cadastroPostagem" onSubmit={onSubmit} style={{marginTop: "35px", marginBottom: "295px"}}>
           <Typography
+            marginTop={4}
             align="center"
             variant="h3"
             gutterBottom
             fontWeight={"bold"}
+            style={{color: "#5D3DB8", fontWeight: "bold", marginBottom: "20px"}}
           >
             {/* if ternário */}
             {tema.id !== 0 ? "Editar tema" : "Cadastrar tema"}
           </Typography>
-          <form onSubmit={onSubmit}>
-            <Box display="flex" flexDirection={"column"} gap={2}>
             <TextField
                 label="Título do tema"
                 name="tituloTema"
@@ -167,12 +172,13 @@ function CadastroTema() {
                 type="submit"
                 variant="contained"
                 disabled={tema.descricao.length < 3}
+                style={{
+                  backgroundColor: "#5D3DB8"
+                }}
               >
                 Cadastrar
               </Button>
-            </Box>
-          </form>
-        </Grid>
+        </form>
       </Grid>
     </>
   );

@@ -1,0 +1,37 @@
+.divDoPerfil {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    margin-bottom: 5px;
+}
+
+.cardDoPerfil {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: aqua;
+    
+}
+
+.cardDoPerfil img {
+    width: 30%;
+    object-fit: cover;
+    aspect-ratio: 3/2;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.areaCard{
+    margin: 10px!important;
+    display: flex;
+    padding-right: 20px!important;
+}
+
+.backgroundPerfil1{
+    position: absolute;
+    opacity: 0.4;
+    height: auto;
+    min-height: 80vh;
+    max-width: 100%;
+}

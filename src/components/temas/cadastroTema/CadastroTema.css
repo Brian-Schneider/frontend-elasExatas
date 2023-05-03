@@ -1,0 +1,21 @@
+.backgroundTema1{
+    position: absolute;
+    opacity: 0.4;
+    height: auto;
+    min-height: 80vh;
+    max-width: 100%;
+    rotate: 180;
+}
+
+.backgroundTema2{
+    overflow: hidden;
+    position: relative;
+
+}
+
+.cadastroPostagem{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+}
