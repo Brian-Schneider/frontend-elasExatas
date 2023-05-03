@@ -23,6 +23,24 @@ function Navbar() {
     (state) => state.token
   );
 
+  const [anchorElPostagem, setAnchorElPostagem] = React.useState<null | HTMLElement>(null);
+  const openPostagem = Boolean(anchorElPostagem);
+  const handleClickPostagem = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElPostagem(event.currentTarget);
+  };
+  const handleClosePostagem= () => {
+    setAnchorElPostagem(null);
+  };
+
+  const [anchorElTema, setAnchorElTema] = React.useState<null | HTMLElement>(null);
+  const openTema = Boolean(anchorElTema);
+  const handleClickTema = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorElTema(event.currentTarget);
+  };
+  const handleCloseTema= () => {
+    setAnchorElTema(null);
+  };
+
   function logout() {
     dispatch(addToken(''))
     toast.success('Usuário deslogado 🥲', {
@@ -51,28 +69,106 @@ function Navbar() {
             </Link>
 
             <Box display="flex" justifyContent="center" alignItems={"center"}>
-              <Link to="/postagens">
                 <Box mx={1} style={{ cursor: "pointer" }}>
-                  <Typography variant="h6" color="#ffff">
-                    Postagens
-                  </Typography>
+                  <Button
+                    id="demo-positioned-button"
+                    aria-controls={openPostagem ? 'demo-positioned-menu' : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={openPostagem ? 'true' : undefined}
+                    onClick={handleClickPostagem}
+                    style={{textTransform: "none"}}
+                  >
+                    <Typography variant="h6" color="#ffff">
+                      Postagens
+                    </Typography>
+                  </Button>
+                  <Menu
+                    sx={{ mt: '40px' }}
+                    id="menu-navbar"
+                    anchorEl={anchorElPostagem}
+                    open={Boolean(anchorElPostagem)}
+                    onClose={handleClosePostagem}
+                    anchorOrigin={{
+                      vertical: 'top',
+                      horizontal: 'right',
+                    }}
+                    keepMounted
+                    transformOrigin={{
+                      vertical: 'top',
+                      horizontal: 'right',
+                    }}
+                  >
+                    <MenuItem onClick={handleClosePostagem} style={{display: "block", paddingBottom: "1vh"}}>
+                      <Link to="/postagens">
+                        <Box mx={1} style={{ cursor: "pointer" }}>
+                          <Typography variant="body1" color="#000000">
+                            Ver Postagens
+                          </Typography>
+                        </Box>
+                      </Link>
+                    </MenuItem>
+                    <MenuItem onClick={handleClosePostagem} style={{display: "block"}}>
+                      <Link to="/cadastropostagem">
+                        <Box mx={1} style={{ cursor: "pointer" }}>
+                          <Typography variant="body1" color="#000000">
+                            Cadastrar Postagens
+                          </Typography>
+                        </Box>
+                      </Link>
+                    </MenuItem>
+                  </Menu>
                 </Box>
-              </Link>
+            
 
-              <Link to="/temas">
                 <Box mx={1} style={{ cursor: "pointer" }}>
-                  <Typography variant="h6" color="#ffff">
-                    Temas
-                  </Typography>
+                  <Button
+                    id="demo-positioned-button"
+                    aria-controls={openTema ? 'demo-positioned-menu' : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={openTema ? 'true' : undefined}
+                    onClick={handleClickTema}
+                    style={{textTransform: "none"}}
+                  >
+                    <Typography variant="h6" color="#ffff">
+                      Temas
+                    </Typography>
+                  </Button>
+                  <Menu
+                    sx={{ mt: '40px' }}
+                    id="menu-navbar"
+                    anchorEl={anchorElTema}
+                    open={Boolean(anchorElTema)}
+                    onClose={handleCloseTema}
+                    anchorOrigin={{
+                      vertical: 'top',
+                      horizontal: 'right',
+                    }}
+                    keepMounted
+                    transformOrigin={{
+                      vertical: 'top',
+                      horizontal: 'right',
+                    }}
+                  >
+                    <MenuItem onClick={handleCloseTema} style={{display: "block", paddingBottom: "1vh"}}>
+                      <Link to="/temas">
+                        <Box mx={1} style={{ cursor: "pointer" }}>
+                          <Typography variant="body1" color="#000000">
+                            Ver Temas
+                          </Typography>
+                        </Box>
+                      </Link>
+                    </MenuItem>
+                    <MenuItem onClick={handleCloseTema} style={{display: "block"}}>
+                      <Link to="/cadastrartema">
+                        <Box mx={1} style={{ cursor: "pointer" }}>
+                          <Typography variant="body1" color="#000000">
+                            Cadastrar Temas
+                          </Typography>
+                        </Box>
+                      </Link>
+                    </MenuItem>
+                  </Menu>
                 </Box>
-              </Link>
-              <Link to="/cadastrartema">
-                <Box mx={1} style={{ cursor: "pointer" }}>
-                  <Typography variant="h6" color="#ffff">
-                    Cadastrar tema
-                  </Typography>
-                </Box>
-              </Link>
               <Link to="/perfil">
                 <Box mx={1} style={{ cursor: "pointer" }}>
                   <Typography variant="h6" color="#ffff">

@@ -16,6 +16,7 @@
     "@material-ui/lab": "4.0.0-alpha.60",
     "@mui/icons-material": "5.0.5",
     "@mui/material": "5.0.6",
+    "@react-email/link": "0.0.5",
     "@types/redux": "3.6.0",
     "axios": "0.21.4",
     "carousel": "^0.0.3",
