@@ -198,11 +198,10 @@ function CadastroPostagem() {
   }
 
   return (
-    <>
+    <div className="geral">
+      <div className="background1"></div>
 
- 
       <Grid container justifyContent={"center"} className="background2">
-      <img src="https://i.imgur.com/WizgGzX.jpg" alt="" className="background1"/>
         <form className="cadastroPostagem" onSubmit={onSubmit} style={{marginTop: "35px", marginBottom: "35px"}}>
           <Typography marginTop={4} variant="h3" align="center" style={{color: "#5D3DB8", fontWeight: "bold", marginBottom: "20px"}}>
             Cadastrar Postagem
@@ -287,7 +286,7 @@ function CadastroPostagem() {
           </Button>
         </form>
       </Grid>
-    </>
+    </div>
   );
 }
 

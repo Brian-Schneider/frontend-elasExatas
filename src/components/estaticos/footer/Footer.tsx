@@ -14,7 +14,7 @@ function Footer() {
             direction="row"
             justifyContent="center"
             alignItems="center">
-            <Box display={'flex'} alignItems="center"  style={{ backgroundColor: '#d74883', height: '95px'}} width={'100%'} justifyContent={'space-around'}>
+            <Box display={'flex'} alignItems="center"  style={{ backgroundColor: '#d74883', height: '95px'}} width={'100%'} justifyContent={'space-around'} paddingBottom={1}>
                 <Box>
                     <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
                         <Typography variant="h6" align="center" gutterBottom style={{ color: "#ffff", marginBottom:'10px' }}>
@@ -26,13 +26,13 @@ function Footer() {
                             <GitHubIcon style={{ fontSize: 35, color: "#ffff", marginBottom:'10px' }} />
                         </a>
                         <a href="mailto:elasexatasgen@gmail.com" target="_blank">
-                            <MailIcon style={{ fontSize: 35, color: "#ffff", marginLeft: '20px', marginBottom:'10px' }} />
+                            <MailIcon style={{ fontSize: 40, color: "#ffff", marginLeft: '20px', marginBottom:'5px' }} />
                         </a>
                     </Box>
                 </Box>
 
                 <Box>
-                    <Box paddingTop={1}>
+                    <Box paddingTop={1} >
                         
                         <a>
                             <Typography 

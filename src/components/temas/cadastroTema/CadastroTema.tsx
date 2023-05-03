@@ -136,9 +136,10 @@ function CadastroTema() {
   }
 
   return (
-    <>
+    <div className="tema1">
+      <div className="backgroundTema1"></div>
+
       <Grid container justifyContent={"center"} className="backgroundTema2">
-      <img src="https://i.imgur.com/WizgGzX.jpg" alt="" className="backgroundTema1"/>
       <form className="cadastroPostagem" onSubmit={onSubmit} style={{marginTop: "35px", marginBottom: "295px"}}>
           <Typography
             marginTop={4}
@@ -180,7 +181,7 @@ function CadastroTema() {
               </Button>
         </form>
       </Grid>
-    </>
+    </div>
   );
 }
 

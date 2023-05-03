@@ -6,16 +6,20 @@
   }
 
   .background1{
-    position: absolute;
+    background-image: url(https://i.imgur.com/WizgGzX.jpg);
     opacity: 0.4;
-    height: auto;
-    min-height: 80vh;
-    max-width: 100%;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
     
+  }
+
+  .geral{
+    position: relative;
   }
 
   .background2{
     overflow: hidden;
-    position: relative;
-
+    position: absolute;
+    top: 5%;
   }
