@@ -35,6 +35,7 @@ export default function Mulheres() {
     setExpanded3(false);
     setExpanded4(false);
     setExpanded5(false);
+    setExpanded6(false);
   };
 
   const [expanded2, setExpanded2] = React.useState(false);
@@ -45,6 +46,7 @@ export default function Mulheres() {
     setExpanded3(false);
     setExpanded4(false);
     setExpanded5(false);
+    setExpanded6(false);
   };
 
   const [expanded3, setExpanded3] = React.useState(false);
@@ -55,6 +57,7 @@ export default function Mulheres() {
     setExpanded2(false);
     setExpanded4(false);
     setExpanded5(false);
+    setExpanded6(false);
   };
 
   const [expanded4, setExpanded4] = React.useState(false);
@@ -65,6 +68,7 @@ export default function Mulheres() {
     setExpanded2(false);
     setExpanded3(false);
     setExpanded5(false);
+    setExpanded6(false);
   };
 
   const [expanded5, setExpanded5] = React.useState(false);
@@ -75,6 +79,18 @@ export default function Mulheres() {
     setExpanded2(false);
     setExpanded3(false);
     setExpanded4(false);
+    setExpanded6(false);
+  };
+
+  const [expanded6, setExpanded6] = React.useState(false);
+
+  const handleExpandClick6 = () => {
+    setExpanded6(!expanded6);
+    setExpanded1(false);
+    setExpanded2(false);
+    setExpanded3(false);
+    setExpanded4(false);
+    setExpanded5(false);
   };
 
   return (
@@ -375,6 +391,69 @@ export default function Mulheres() {
           </Card>
         </Box>
 
+        <Box>
+          <Card sx={{ maxWidth: 345 }}>
+            <CardHeader title="Donna Strickland" subheader="Física" />
+            <CardMedia
+              component="img"
+              height="194"
+              image="https://us.edu.pl/wp-content/uploads/obrazek-wyrozniajacy/2019-Photo-Shoot-with-Donna-Strickland.jpg"
+              alt="Donna Strickland"
+            />
+            <CardContent>
+              <Typography variant="body2" color="text.secondary">
+                “Parece que o mundo está acordando para a engenhosidade das
+                mulheres cientistas.”
+              </Typography>
+            </CardContent>
+            <CardActions disableSpacing>
+              <ExpandMore
+                expand={expanded5}
+                onClick={handleExpandClick5}
+                aria-expanded={expanded5}
+                aria-label="show more"
+              >
+                <ExpandMoreIcon />
+              </ExpandMore>
+            </CardActions>
+            <Collapse in={expanded5} timeout="auto" unmountOnExit>
+              <CardContent>
+                <Typography paragraph style={{ fontWeight: "bold" }}>
+                  História
+                </Typography>
+                <Typography paragraph>
+                  Donna Strickland nasceu em 27 de maio de 1959, em Guelph ,
+                  Ontário, Canadá. Depois de se formar no Guelph Collegiate
+                  Vocational Institute, ela decidiu frequentar a McMaster
+                  University porque seu programa de engenharia física incluía
+                  lasers e eletro-óptica , áreas de particular interesse dela.
+                  Na McMaster, ela era uma das três mulheres em uma classe de
+                  vinte e cinco. Strickland formou-se como bacharel em
+                  engenharia física em 1981.
+                </Typography>
+                <Typography paragraph>
+                  Logo após sua graduação, estudou óptica na University of
+                  Rochester, nos Estados Unidos e obteve seu doutorado em óptica
+                  em 1989.
+                </Typography>
+                <Typography paragraph>
+                  Foi pesquisadora do Conselho Nacional de Pesquisa do Canadá.
+                  No ano de 1992 trabalhou no Laboratório Nacional Lawrence
+                  Livermore sobre divisão de laser. Ingressou como professora
+                  associada na Universidade de Waterloo em 1997, onde até hoje
+                  lidera um grupo de estudos com laser de alta intensidade.
+                </Typography>
+                <Typography paragraph>
+                  Donna ganhou o Prêmio Nobel de Física em 2018 por desenvolver
+                  a amplificação de pulsos de laser ultracurtos de alta
+                  intensidade sem destruir o material amplificador. A
+                  amplificação de pulso tem muitos usos, incluindo ferramentas
+                  com aplicações em medicina, indústria, ciência e segurança.
+                </Typography>
+              </CardContent>
+            </Collapse>
+          </Card>
+        </Box>
 
         <Box>
           <Card sx={{ maxWidth: 345 }}>
@@ -393,15 +472,15 @@ export default function Mulheres() {
             </CardContent>
             <CardActions disableSpacing>
               <ExpandMore
-                expand={expanded5}
-                onClick={handleExpandClick5}
-                aria-expanded={expanded5}
+                expand={expanded6}
+                onClick={handleExpandClick6}
+                aria-expanded={expanded6}
                 aria-label="show more"
               >
                 <ExpandMoreIcon />
               </ExpandMore>
             </CardActions>
-            <Collapse in={expanded5} timeout="auto" unmountOnExit>
+            <Collapse in={expanded6} timeout="auto" unmountOnExit>
               <CardContent>
                 <Typography paragraph style={{ fontWeight: "bold" }}>
                   História
