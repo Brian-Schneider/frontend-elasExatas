@@ -19,8 +19,7 @@ import { Box, Grid } from '@mui/material';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 
-function Carousel(props)
- {
+function Carousel(props) {
 
     const troca = props.trocar;
 
@@ -62,7 +61,7 @@ function Carousel(props)
         },
         {
             nome: "Vinicius Prazeres",
-            img: "https://github.com/viniciusaprazeres.png",
+            img: "https://images-ext-1.discordapp.net/external/MLGKNXIA9YwRq06woDHN-H8bgS-iZNKsG-hVJuyL2iw/https/i.imgur.com/Hw49S0Y.png?width=598&height=662",
             frase: "Lorem ipsum, dolor sit amet consectetur adipisicing",
             linkedIn: "https://www.linkedin.com/in/viniciusaprazeres/",
             gitHub: "https://github.com/viniciusaprazeres"
@@ -76,35 +75,35 @@ function Carousel(props)
         }
     ]
 
-    const items = 
+    const items =
         desenvolvedores.map((desenvolvedor) => (
-            <Card sx={{ maxWidth: 250}} style={{marginLeft: "auto", marginRight: "auto", borderRadius: "10px", backgroundColor:"pink"}}>
-            <CardHeader         
-                title={desenvolvedor.nome}
-            />
-            <CardMedia
-                component="img"
-                height="250"
-                image={desenvolvedor.img}
-                alt={desenvolvedor.nome}
-            />
-            <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                    {desenvolvedor.frase}                    
-                </Typography>
-            </CardContent>
-            <CardContent>
-                <Box display={"flex"} alignContent={"center"} justifyContent={"center"} gap={"10px"}>
-                    <a href={desenvolvedor.linkedIn} target="_blank">
-                        <LinkedInIcon style={{fontSize: "40px"}}/>
-                    </a>
-                    <a href={desenvolvedor.gitHub} target="_blank">
-                        <GitHubIcon style={{fontSize: "40px"}}/>
-                    </a>
-                </Box>
-            </CardContent>
-        </Card>
-        ))      
+            <Card sx={{ maxWidth: 250 }} style={{ marginLeft: "auto", marginRight: "auto", borderRadius: "10px", backgroundColor: "pink" }}>
+                <CardHeader
+                    title={desenvolvedor.nome}
+                />
+                <CardMedia
+                    component="img"
+                    height="250"
+                    image={desenvolvedor.img}
+                    alt={desenvolvedor.nome}
+                />
+                <CardContent>
+                    <Typography variant="body2" color="text.secondary">
+                        {desenvolvedor.frase}
+                    </Typography>
+                </CardContent>
+                <CardContent>
+                    <Box display={"flex"} alignContent={"center"} justifyContent={"center"} gap={"10px"}>
+                        <a href={desenvolvedor.linkedIn} target="_blank">
+                            <LinkedInIcon style={{ fontSize: "40px" }} />
+                        </a>
+                        <a href={desenvolvedor.gitHub} target="_blank">
+                            <GitHubIcon style={{ fontSize: "40px" }} />
+                        </a>
+                    </Box>
+                </CardContent>
+            </Card>
+        ))
 
 
 
@@ -125,33 +124,33 @@ function Carousel(props)
 
     return (
         <>
-        {troca === false ? <AliceCarousel
-            mouseTracking
-            items={items}
-            infinite
-            autoPlay
-            responsive={responsivo}
-            disableDotsControls={true}
-            disableButtonsControls={true}
-            autoPlayInterval={3000} /> :
-            <Box display={"flex"}
-            justifyContent={"space-around"}
-            flexWrap={"wrap"}
-            gap={"40px"}
-            margin={'40px'}>
-                 <Grid display={"flex"}
+            {troca === false ? <AliceCarousel
+                mouseTracking
+                items={items}
+                infinite
+                autoPlay
+                responsive={responsivo}
+                disableDotsControls={true}
+                disableButtonsControls={true}
+                autoPlayInterval={3000} /> :
+                <Box display={"flex"}
                     justifyContent={"space-around"}
                     flexWrap={"wrap"}
-                    gap={"170px"}
+                    gap={"40px"}
                     margin={'40px'}>
+                    <Grid display={"flex"}
+                        justifyContent={"space-around"}
+                        flexWrap={"wrap"}
+                        gap={"170px"}
+                        margin={'40px'}>
                         {items.map((item) => (
-                        <Box>{item}</Box>
-                        
-                ))}
-                 </Grid>
-            </Box>
-        }
-         </>
+                            <Box>{item}</Box>
+
+                        ))}
+                    </Grid>
+                </Box>
+            }
+        </>
 
     )
 }
