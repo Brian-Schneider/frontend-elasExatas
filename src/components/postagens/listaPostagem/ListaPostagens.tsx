@@ -36,7 +36,7 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
     }),
 }));
 
-function ListaPostagem(props) {
+function ListaPostagem(props: { desabilitar: any; lista: any }) {
     const [postagens, setPostagem] = useState<Postagem[]>([])
     const [postagemList, setPostagemList] = useState(postagens)
     const desab = props.desabilitar

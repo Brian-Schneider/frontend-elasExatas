@@ -19,7 +19,7 @@ import { Box, Grid } from '@mui/material';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GitHubIcon from '@material-ui/icons/GitHub';
 
-function Carousel(props) {
+function Carousel(props: { trocar: any; }) {
 
     const troca = props.trocar;
 
