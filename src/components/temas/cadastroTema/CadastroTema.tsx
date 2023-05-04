@@ -169,16 +169,28 @@ function CadastroTema() {
                   updateModel(event)
                 }
               />
-              <Button
-                type="submit"
-                variant="contained"
-                disabled={tema.descricao.length < 3}
-                style={{
-                  backgroundColor: "#5D3DB8"
-                }}
-              >
-                Cadastrar
-              </Button>
+              
+              {tema.tituloTema.length < 10 && tema.descricao.length < 10 ? <Button
+            variant="contained"
+            type="submit"
+            disabled = {true}
+            
+          // disabled={tema.id === 0}
+          >
+            Insira os dados
+          </Button> : 
+          <Button
+          variant="contained"
+          color="primary"
+          disabled = {false}
+          type="submit"
+          style={{
+            backgroundColor: "#5D3DB8"
+          }}
+        // disabled={tema.id === 0}
+        >
+          Cadastrar
+        </Button>}
         </form>
       </Grid>
     </div>
