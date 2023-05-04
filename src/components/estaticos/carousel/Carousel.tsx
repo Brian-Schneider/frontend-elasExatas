@@ -27,49 +27,49 @@ function Carousel(props: { trocar: any; }) {
         {
             nome: "Brian Schneider",
             img: "https://github.com/Brian-Schneider.png",
-            frase: "Lorem ipsum, dolor sit amet consectetur adipisicing",
+            frase: "Desenvolvedor Full Stack",
             linkedIn: "https://www.linkedin.com/in/brian-slima/",
             gitHub: "https://github.com/Brian-Schneider"
         },
         {
             nome: "Elizangela Xavier",
             img: "https://github.com/ElizangelaXavierS.png",
-            frase: "Lorem ipsum, dolor sit amet consectetur adipisicing",
+            frase: "Desenvolvedor Full Stack",
             linkedIn: "https://www.linkedin.com/in/elizangelaxavier/",
             gitHub: "https://github.com/ElizangelaXavierS"
         },
         {
             nome: "Rafael Gouvea",
             img: "https://github.com/RafaelGG1.png",
-            frase: "Lorem ipsum, dolor sit amet consectetur adipisicing",
+            frase: "Desenvolvedor Full Stack",
             linkedIn: "https://www.linkedin.com/in/rafael-gouvea/",
             gitHub: "https://github.com/RafaelGG1"
         },
         {
             nome: "Samuel Cavelho",
             img: "https://github.com/samuelnovaiscavelho.png",
-            frase: "Lorem ipsum, dolor sit amet consectetur adipisicing",
+            frase: "Desenvolvedor Full Stack",
             linkedIn: "https://www.linkedin.com/in/samuel-cavelho/",
             gitHub: "https://github.com/samuelnovaiscavelho"
         },
         {
             nome: "Thayane Almeida",
             img: "https://github.com/ThayaneAlmeida.png",
-            frase: "Lorem ipsum, dolor sit amet consectetur adipisicing",
+            frase: "Desenvolvedor Full Stack",
             linkedIn: "http://linkedin.com/in/thayane-almeida/",
             gitHub: "https://github.com/ThayaneAlmeida"
         },
         {
             nome: "Vinicius Prazeres",
             img: "https://images-ext-1.discordapp.net/external/MLGKNXIA9YwRq06woDHN-H8bgS-iZNKsG-hVJuyL2iw/https/i.imgur.com/Hw49S0Y.png?width=598&height=662",
-            frase: "Lorem ipsum, dolor sit amet consectetur adipisicing",
+            frase: "Desenvolvedor Full Stack",
             linkedIn: "https://www.linkedin.com/in/viniciusaprazeres/",
             gitHub: "https://github.com/viniciusaprazeres"
         },
         {
             nome: "Yasmin Cozaciuc",
             img: "https://github.com/YasminCozaciuc.png",
-            frase: "Lorem ipsum, dolor sit amet consectetur adipisicing",
+            frase: "Desenvolvedor Full Stack",
             linkedIn: "https://www.linkedin.com/in/yasmincozaciuc/",
             gitHub: "https://github.com/YasminCozaciuc"
         }
