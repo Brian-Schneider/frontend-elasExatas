@@ -60,11 +60,11 @@ function ListaTemas() {
         <Box m={4}>
           <Card>
             <CardContent>
-              <Typography color="textSecondary" gutterBottom>
-                Tema: {tema.tituloTema}
+            <Typography variant="h5" component="h2" gutterBottom>
+                {tema.tituloTema}
               </Typography>
-              <Typography variant="h5" component="h2">
-                {tema.descricao}
+              <Typography color="textSecondary">
+                {tema.descricao} 
               </Typography>
             </CardContent>
             <CardActions>
