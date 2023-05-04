@@ -203,7 +203,7 @@ function CadastroPostagem() {
 
       <Grid container justifyContent={"center"} className="background2">
         <form className="cadastroPostagem" onSubmit={onSubmit} style={{marginTop: "35px", marginBottom: "35px"}}>
-          <Typography marginTop={4} variant="h3" align="center" style={{color: "#5D3DB8", fontWeight: "bold", marginBottom: "20px"}}>
+          <Typography variant="h3" align="center" style={{color: "#5D3DB8", fontWeight: "bold", marginBottom: "20px"}}>
             Cadastrar Postagem
           </Typography>
 

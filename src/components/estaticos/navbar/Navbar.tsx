@@ -12,6 +12,8 @@ import { toast } from "react-toastify";
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import { useEffect } from "react";
+import useState from 'react';
 
 function Navbar() {
 
@@ -22,6 +24,8 @@ function Navbar() {
   const token = useSelector<TokenState, TokenState["token"]>(
     (state) => state.token
   );
+
+  const [hidden, setHidden] = React.useState(false)
 
   const [anchorElPostagem, setAnchorElPostagem] = React.useState<null | HTMLElement>(null);
   const openPostagem = Boolean(anchorElPostagem);
@@ -56,6 +60,15 @@ function Navbar() {
     history('/login')
   }
 
+  useEffect(() => {
+    if (token === "") {
+      setHidden(true)
+    }
+    else {
+      setHidden(false)
+    }
+  }, [token]);
+
 
   return (
     <>
@@ -67,7 +80,7 @@ function Navbar() {
                 <img src='https://cdn.discordapp.com/attachments/1070726474568568852/1101518731869438064/image.png' className="logoHome" />
               </Box>
             </Link>
-
+            <div hidden={hidden}>
             <Box display="flex" justifyContent="center" alignItems={"center"}>
                 <Box mx={1} style={{ cursor: "pointer" }}>
                   <Button
@@ -79,7 +92,7 @@ function Navbar() {
                     style={{textTransform: "none"}}
                   >
                     <Typography variant="h6" color="#ffff">
-                      Postagens
+                      Categorias
                     </Typography>
                   </Button>
                   <Menu
@@ -102,7 +115,7 @@ function Navbar() {
                       <Link to="/postagens">
                         <Box mx={1} style={{ cursor: "pointer" }}>
                           <Typography variant="body1" color="#000000">
-                            Ver Postagens
+                            Ver Postagens/Eventos
                           </Typography>
                         </Box>
                       </Link>
@@ -111,7 +124,7 @@ function Navbar() {
                       <Link to="/cadastropostagem">
                         <Box mx={1} style={{ cursor: "pointer" }}>
                           <Typography variant="body1" color="#000000">
-                            Cadastrar Postagens
+                            Cadastrar Postagens/Eventos
                           </Typography>
                         </Box>
                       </Link>
@@ -182,6 +195,8 @@ function Navbar() {
                 </Typography>
               </Box>
             </Box>
+            </div>
+            
           </Box>
         </Toolbar>
       </AppBar>
