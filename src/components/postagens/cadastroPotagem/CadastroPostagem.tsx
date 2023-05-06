@@ -17,7 +17,7 @@ import { Tema } from "../../../models/Tema";
 import Postagem from "../../../models/Postagem";
 import { getAll, getId, post, put } from "../../../service/Service";
 import { useSelector } from "react-redux";
-import { TokenState } from "../../../store/tokens/tokenReducer";
+import { TokenState, tokenReducer } from "../../../store/tokens/tokenReducer";
 import { toast } from "react-toastify";
 import Usuario from "../../../models/Usuario";
 import ShareIcon from '@mui/icons-material/Share';
@@ -53,10 +53,10 @@ function CadastroPostagem() {
     usuario: null
   });
 
-  function handleSubTema(event: ChangeEvent<HTMLSelectElement>) {
+  function handleSubTema(sub: any) {
     setPostagem({
       ...postagem,
-    link: event.target.value
+    link: sub
     })
   }
 
@@ -203,8 +203,8 @@ function CadastroPostagem() {
 
       <Grid container justifyContent={"center"} className="background2">
         <form className="cadastroPostagem" onSubmit={onSubmit} style={{marginTop: "35px", marginBottom: "35px"}}>
-          <Typography marginTop={4} variant="h3" align="center" style={{color: "#5D3DB8", fontWeight: "bold", marginBottom: "20px"}}>
-            Cadastrar Postagem
+          <Typography variant="h3" align="center" style={{color: "#5D3DB8", fontWeight: "bold", marginBottom: "20px"}}>
+          {postagem.id !== 0 ? "Editar Postagem/Evento" : "Cadastrar Postagem/Evento"}
           </Typography>
 
           <TextField
@@ -245,15 +245,15 @@ function CadastroPostagem() {
           />
 
           <FormControl fullWidth>
-              <InputLabel>Tipo de Postagem</InputLabel>
+              <InputLabel>Categoria</InputLabel>
               <Select variant="standard"
-                onChange={(event: ChangeEvent<HTMLSelectElement>) => handleSubTema(event)}
+                onChange={(event) => handleSubTema(event.target.value)}
               >
                 {subTemas.map((subTema) => (
                   <MenuItem style={{display:'block'}} value={subTema}>{subTema}</MenuItem>
                 ))}
               </Select>
-              <FormHelperText>Escolha um tipo de postagem</FormHelperText>
+              <FormHelperText>Escolha uma categoria</FormHelperText>
 
             </FormControl>
 
@@ -273,17 +273,30 @@ function CadastroPostagem() {
             </Select>
             <FormHelperText>Escolha um tipo de tema</FormHelperText>
           </FormControl>
-          <Button
+          {tema.id === 0 ? <Button
             variant="contained"
-            color="primary"
             type="submit"
+            disabled = {true}
             style={{
-              backgroundColor: "#5D3DB8"
+              backgroundColor: "none"
             }}
           // disabled={tema.id === 0}
           >
-            {tema.id === 0 ? "Selecionar um tema" : "Cadastrar"}
-          </Button>
+            Selecionar um Tema
+          </Button> : 
+          <Button
+          variant="contained"
+          color="primary"
+          disabled = {false}
+          type="submit"
+          style={{
+            backgroundColor: "#5D3DB8"
+          }}
+        // disabled={tema.id === 0}
+        >
+          {postagem.id !== 0 ? "Editar postagem" : "Cadastrar postagem"}
+        </Button>}
+          
         </form>
       </Grid>
     </div>

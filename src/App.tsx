@@ -34,7 +34,7 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/cadastropostagem" element={<CadastroPostagem />} />
             <Route path="/editarpostagem/:id" element={<CadastroPostagem />} />
-            <Route path="/postagens" element={<ListaPostagens />} />
+            <Route path="/postagens" element={<ListaPostagens desabilitar={undefined} lista={undefined} />} />
             <Route path="/deletarpostagem/:id" element={<DeletarPostagem />} />
             <Route path="/temas" element={<ListaTemas />} />
             <Route path="/cadastrartema" element={<CadastroTema />} />

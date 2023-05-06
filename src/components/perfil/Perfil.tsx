@@ -5,11 +5,14 @@ import Usuario from "../../models/Usuario";
 import { getId } from "../../service/Service";
 import { Avatar, Box, Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Typography } from "@mui/material";
 import "./Perfil.css"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 
 
 function Perfil() {
+
+    const history = useNavigate();
 
     const usuarioId = useSelector<TokenState, TokenState['id']>(
         (state) => state.id
@@ -38,6 +41,22 @@ function Perfil() {
     useEffect(() => {
         getUserById(+usuarioId)
     }, [])
+
+    useEffect(() => {
+        if (token === "") {
+          toast.info('Você precisa estar logado! 🤪', {
+            position: "top-left",
+            autoClose: 4000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+          history("/login");
+        }
+      }, [token]);
 
     return (
         <div className="backgroundPerfil1">

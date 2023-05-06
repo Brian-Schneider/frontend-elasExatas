@@ -55,16 +55,16 @@ function ListaTemas() {
   }, [token]);
 
   return (
-    <>
+    <div className="backgroundTema3">
       {temas.map((tema) => (
-        <Box m={4}>
+        <Box m={4} marginTop={0}>
           <Card>
             <CardContent>
-              <Typography color="textSecondary" gutterBottom>
-                Tema: {tema.tituloTema}
+            <Typography variant="h5" component="h2" gutterBottom>
+                {tema.tituloTema}
               </Typography>
-              <Typography variant="h5" component="h2">
-                {tema.descricao}
+              <Typography color="textSecondary">
+                {tema.descricao} 
               </Typography>
             </CardContent>
             <CardActions>
@@ -74,8 +74,8 @@ function ListaTemas() {
               >
                 {" "}
                 {/* O link pode estar incorreto no back-end! */}
-                <Button color="primary" variant="contained" size="small">
-                  Atualizar
+                <Button color="primary" variant="contained" size="small" style={{backgroundColor: "#08aabe", color: "#fff"}}>
+                  Editar
                 </Button>
               </Link>
               <Link
@@ -84,7 +84,7 @@ function ListaTemas() {
               >
                 {" "}
                 {/* O link pode estar incorreto no back-end! */}
-                <Button color="secondary" variant="contained" size="small">
+                <Button color="secondary" variant="contained" size="small"style={{backgroundColor: "#ff4d80", color: "#fff"}}>
                   Deletar
                 </Button>
               </Link>
@@ -92,7 +92,7 @@ function ListaTemas() {
           </Card>
         </Box>
       ))}
-    </>
+    </div>
   );
 }
 

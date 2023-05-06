@@ -20,6 +20,7 @@ import { red } from '@mui/material/colors';
 import { IconButtonProps } from '@material-ui/core/IconButton';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import CardPostagem from '../cardPostagem/CardPostagem';
 
 interface ExpandMoreProps extends IconButtonProps {
     expand: boolean;
@@ -36,7 +37,7 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
     }),
 }));
 
-function ListaPostagem(props) {
+function ListaPostagem(props: { desabilitar: any; lista: any }) {
     const [postagens, setPostagem] = useState<Postagem[]>([])
     const [postagemList, setPostagemList] = useState(postagens)
     const desab = props.desabilitar
@@ -69,8 +70,12 @@ function ListaPostagem(props) {
             setValue(list)
             setPostagemList([...postagens.filter(post => post.link === value)])
         }
-    })
+    }, [postagens])
 
+  
+    
+
+    console.log(list)
 
     useEffect(() => {
         if (token === '') {
@@ -134,54 +139,7 @@ function ListaPostagem(props) {
                     margin={'40px'}
                 >
                     {postagens.map(postagem => (
-                        <Card sx={{ maxWidth: 345 }}>
-                            <CardHeader
-                                avatar={
-                                    <Avatar src={postagem.usuario?.foto} sx={{ bgcolor: red[500] }}>
-
-                                    </Avatar>
-                                }
-                                action={
-                                    <IconButton aria-label="settings">
-                                        <MoreVertIcon />
-                                    </IconButton>
-                                }
-                                title={postagem.usuario?.nome}
-                                subheader={postagem.data}
-                            />
-                            <CardMedia
-                                component="img"
-                                height="194"
-                                image={postagem.imagem}
-                                alt="Paella dish"
-                            />
-                            <CardContent>
-                                <Typography variant="body2" color="text.secondary">
-                                    {postagem.tituloPostagem}
-                                </Typography>
-                            </CardContent>
-                            <CardActions disableSpacing>
-                                <IconButton aria-label="add to favorites">
-                                    <FavoriteIcon />
-                                </IconButton>
-                                <IconButton aria-label="share">
-                                    <ShareIcon />
-                                </IconButton>
-                                <ExpandMore
-                                    expand={expanded}
-                                    onClick={handleExpandClick}
-                                    aria-expanded={expanded}
-                                    aria-label="show more"
-                                >
-                                    <ExpandMoreIcon />
-                                </ExpandMore>
-                            </CardActions>
-                            <Collapse in={expanded} timeout="auto" unmountOnExit>
-                                <CardContent>
-                                    <Typography paragraph>{postagem.conteudo}</Typography>
-                                </CardContent>
-                            </Collapse>
-                        </Card>))}
+                       <CardPostagem post={postagem} />))}
                 </Box>
                 </TabPanel>
                 <TabPanel value="Postagens">
@@ -193,54 +151,7 @@ function ListaPostagem(props) {
                     margin={'40px'}
                 >
                     {postagemList.map(postagem => (
-                        <Card sx={{ maxWidth: 345 }}>
-                            <CardHeader
-                                avatar={
-                                    <Avatar src={postagem.usuario?.foto} sx={{ bgcolor: red[500] }}>
-
-                                    </Avatar>
-                                }
-                                action={
-                                    <IconButton aria-label="settings">
-                                        <MoreVertIcon />
-                                    </IconButton>
-                                }
-                                title={postagem.usuario?.nome}
-                                subheader={postagem.data}
-                            />
-                            <CardMedia
-                                component="img"
-                                height="194"
-                                image={postagem.imagem}
-                                alt="Paella dish"
-                            />
-                            <CardContent>
-                                <Typography variant="body2" color="text.secondary">
-                                    {postagem.tituloPostagem}
-                                </Typography>
-                            </CardContent>
-                            <CardActions disableSpacing>
-                                <IconButton aria-label="add to favorites">
-                                    <FavoriteIcon />
-                                </IconButton>
-                                <IconButton aria-label="share">
-                                    <ShareIcon />
-                                </IconButton>
-                                <ExpandMore
-                                    expand={expanded}
-                                    onClick={handleExpandClick}
-                                    aria-expanded={expanded}
-                                    aria-label="show more"
-                                >
-                                    <ExpandMoreIcon />
-                                </ExpandMore>
-                            </CardActions>
-                            <Collapse in={expanded} timeout="auto" unmountOnExit>
-                                <CardContent>
-                                    <Typography paragraph>{postagem.conteudo}</Typography>
-                                </CardContent>
-                            </Collapse>
-                        </Card>))}
+                         <CardPostagem post={postagem} />))}
                 </Box>
                 </TabPanel>
                 <TabPanel value="Eventos">
@@ -252,54 +163,7 @@ function ListaPostagem(props) {
                     margin={'40px'}
                 >
                     {postagemList.map(postagem => (
-                        <Card sx={{ maxWidth: 345 }}>
-                            <CardHeader
-                                avatar={
-                                    <Avatar src={postagem.usuario?.foto} sx={{ bgcolor: red[500] }}>
-
-                                    </Avatar>
-                                }
-                                action={
-                                    <IconButton aria-label="settings">
-                                        <MoreVertIcon />
-                                    </IconButton>
-                                }
-                                title={postagem.usuario?.nome}
-                                subheader={postagem.data}
-                            />
-                            <CardMedia
-                                component="img"
-                                height="194"
-                                image={postagem.imagem}
-                                alt="Paella dish"
-                            />
-                            <CardContent>
-                                <Typography variant="body2" color="text.secondary">
-                                    {postagem.tituloPostagem}
-                                </Typography>
-                            </CardContent>
-                            <CardActions disableSpacing>
-                                <IconButton aria-label="add to favorites">
-                                    <FavoriteIcon />
-                                </IconButton>
-                                <IconButton aria-label="share">
-                                    <ShareIcon />
-                                </IconButton>
-                                <ExpandMore
-                                    expand={expanded}
-                                    onClick={handleExpandClick}
-                                    aria-expanded={expanded}
-                                    aria-label="show more"
-                                >
-                                    <ExpandMoreIcon />
-                                </ExpandMore>
-                            </CardActions>
-                            <Collapse in={expanded} timeout="auto" unmountOnExit>
-                                <CardContent>
-                                    <Typography paragraph>{postagem.conteudo}</Typography>
-                                </CardContent>
-                            </Collapse>
-                        </Card>))}
+                         <CardPostagem post={postagem} />))}
                 </Box>
                 </TabPanel>
             </TabContext>
