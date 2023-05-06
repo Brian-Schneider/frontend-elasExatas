@@ -77,7 +77,7 @@ function Carousel(props: { trocar: any; }) {
 
     const items =
         desenvolvedores.map((desenvolvedor) => (
-            <Card sx={{ maxWidth: 250 }} style={{ marginLeft: "auto", marginRight: "auto", borderRadius: "10px", backgroundColor: "pink" }}>
+            <Card sx={{ maxWidth: 250 }} style={{ marginLeft: "auto", marginRight: "auto", borderRadius: "10px", backgroundColor: "white" }}>
                 <CardHeader
                     title={desenvolvedor.nome}
                 />
@@ -123,7 +123,7 @@ function Carousel(props: { trocar: any; }) {
     }
 
     return (
-        <>
+        <div className='backgroundCarousel'>
             {troca === false ? <AliceCarousel
                 mouseTracking
                 items={items}
@@ -150,7 +150,7 @@ function Carousel(props: { trocar: any; }) {
                     </Grid>
                 </Box>
             }
-        </>
+        </div>
 
     )
 }
