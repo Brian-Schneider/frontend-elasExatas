@@ -40,42 +40,9 @@ function Home() {
         alignItems="center"
         className="caixa"
       >
-        <Grid alignItems="center" item xs={6}>
-          <Box paddingX={20}>
-            <Typography
-              variant="h3"
-              gutterBottom
-              color="textPrimary"
-              component="h3"
-              align="center"
-              className="titulo"
-              style={{ color: "#174581", fontWeight: "bold" }}
-            >
-              Sejam bem vindas ao Elas Exatas!
-            </Typography>
-
-            <Typography
-              variant="h5"
-              gutterBottom
-              color="textPrimary"
-              component="h5"
-              align="center"
-              className="titulo"
-            >
-              Expresse aqui os seus pensamentos e opiniões!
-            </Typography>
-          </Box>
-          <Box display="flex" justifyContent="center">
-            <Box marginRight={1}></Box>
-          </Box>
-        </Grid>
-        <Grid item xs={6}>
-          <img
-            src="https://i.imgur.com/MAqYMtr.png"
-            alt=""
-            className="fotoHome"
-          />
-        </Grid>
+        
+          <img src="https://i.imgur.com/XFQknTh.png" className="imgHome" height="100%" alt="" width="100%"  style={{backgroundRepeat: 'no-repeat'}} />
+       
         <Grid xs={12} className="postagens">
           <TabPostagens />
         </Grid>
