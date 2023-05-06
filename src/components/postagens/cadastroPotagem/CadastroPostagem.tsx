@@ -294,7 +294,7 @@ function CadastroPostagem() {
           }}
         // disabled={tema.id === 0}
         >
-          Cadastrar
+          {postagem.id !== 0 ? "Editar postagem" : "Cadastrar postagem"}
         </Button>}
           
         </form>
