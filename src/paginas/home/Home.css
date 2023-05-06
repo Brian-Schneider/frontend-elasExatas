@@ -14,3 +14,7 @@
     .postagens{
         background-color: white !important;
     }
+
+    .imgHome{
+       min-width: 200vh;
+    }
